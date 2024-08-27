@@ -31,10 +31,10 @@ const locationData = {
 
     // Block F Location
     "fce-room": new Location("FCE Room", "fce-room-mini.jpg", 2, "Kq0LfGPzlT", "Where ingredients become masterpieces."),
-    "big-e": new Location("Big E", "big-e-mini.jpg", 1, "Kq0LfGPzlT", "A hub for problem-solvers."),
+    "big-e": new Location("Big E", "big-e-mini.jpg", 1, "A7rQMrzlGA", "A hub for problem-solvers."),
     "table-tennis-room": new Location("Table Tennis Room", "table-tennis-room-mini.jpg", 4, "Kq0LfGPzlT", "Where every serve is a strategy."),
-    "art-room": new Location("Art Room", "art-room-mini.jpg", 1, "Kq0LfGPzlT", "Where imagination meets canvas."),
-    "slda-room": new Location("SLDA Room", "slda-room-mini.jpg", 1, "Kq0LfGPzlT", "The forge where leaders are shaped."),
+    "art-room": new Location("Art Room", "art-room-mini.jpg", 1, "HTDqWcnLoO", "Where imagination meets canvas."),
+    "slda-room": new Location("SLDA Room", "slda-room-mini.jpg", 1, "9GSOZlhFUO", "The forge where leaders are shaped."),
     "dnt-room": new Location("D&T Workshop", "dnt-room-mini.jpg", 1, "Kq0LfGPzlT", "Craft, create, and conquer the future.")
 }
 

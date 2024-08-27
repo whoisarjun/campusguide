@@ -388,7 +388,7 @@ div.spotlight-facilities-title h2 {
 
 div.other-facilities-container {
     position: absolute;
-    bottom: -283%;
+    top: 383%;
     z-index: 5;
     left: 10%;
     right: 10%;

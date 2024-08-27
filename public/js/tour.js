@@ -38,3 +38,16 @@ function wrapWords() {
 
 // Call the function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', wrapWords);
+
+// Select the element you're interested in
+const element = document.querySelector('.spotlight-facilities-container');
+
+// Get the distance from the top of the element to the top of the viewport
+const elementTop = element.getBoundingClientRect().top;
+
+// Get the total distance from the top of the page to the bottom of the element
+const distanceFromTopToBottom = window.scrollY + elementTop + element.offsetHeight;
+
+const element2 = document.querySelector('.other-facilities-container');
+
+element2.style.top = `${distanceFromTopToBottom + 1250}px`;

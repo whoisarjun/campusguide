@@ -1,0 +1,561 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    margin-top: 90px;
+}
+
+.bg-img-container {
+    height: 950px;
+    width: 100%;
+    overflow: hidden; /* Ensures anything outside the container's bounds is not visible */
+}
+
+.bg-img-container img {
+    height: 100%; /* Ensures the image fills the height of the container */
+    width: 100%; /* Ensures the image fills the width of the container */
+    object-fit: cover; /* Crops the image to cover the container's bounds */
+    display: block;
+    filter: brightness(60%);
+}
+
+div.main-banner div.banner-text {
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+div.main-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
+
+div.main-banner div.banner-text h1 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
+    font-size: 140px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+div.main-banner div.banner-text h4 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+div.main-banner div.banner-button-group button {
+    box-shadow: 0 0 4px white;
+    margin: 0 10px;
+    border-radius: 50px;
+}
+
+div.scroll-indicator {
+    color: white;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+}
+
+div.scroll-indicator i.scroll-icon {
+    font-size: 20px;
+    animation: scrollIconAnimation 3s infinite;
+}
+
+div.scroll-indicator p.scroll-text {
+    font-size: 20px;
+}
+
+div.whats-new-container {
+    position: absolute;
+    bottom: -30%;
+    z-index: 5;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+}
+
+div.whats-new-title {
+    color: white;
+    margin-top: 50px;
+    text-align: left;
+    margin-left: 95px;
+    z-index: 999;
+}
+
+div.whats-new-title h2 {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+div.whats-new-body {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0;
+    color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 85%;
+    /* Reduce the width of the carousel */
+    margin: 0 auto;
+    /* Center the carousel within the container */
+}
+
+div.whats-new-body img {
+    width: 100%;
+    height: 300px;
+    /* Ensure the image takes the full height of the container */
+    object-fit: cover;
+    /* Crop the image to fit the specified height */
+    display: block;
+    position: relative;
+    filter: opacity(0%);
+}
+
+/* Container for the carousel item and its caption */
+div.carousel-item {
+    position: relative;
+    /* Ensure the darkener and caption are positioned correctly */
+    overflow: hidden;
+    /* Hide overflow content */
+}
+
+div.carousel-darkener.ecotrail-carousel {
+    background: url("/images/ecotrail-mini.jpeg") center center no-repeat;
+    background-position: center -200px;
+    background-size: cover;
+    /* Ensure the image covers the entire area */
+    filter: brightness(50%) blur(3px);
+}
+
+div.carousel-darkener.library-carousel {
+    background: url("/images/library-mini.jpeg") center center no-repeat;
+    background-position: center -500px;
+    background-size: cover;
+    /* Ensure the image covers the entire area */
+    filter: brightness(50%) blur(3px);
+}
+
+div.carousel-darkener.court-carousel {
+    background: url("/images/basketball-court-mini.jpg") center center no-repeat;
+    background-position: center -200px;
+    background-size: cover;
+    /* Ensure the image covers the entire area */
+    filter: brightness(50%) blur(3px);
+}
+
+div.carousel-darkener {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Place the darkener behind the caption */
+    pointer-events: none;
+    /* Ensure it doesn't interfere with interactions */
+}
+
+div.carousel-caption {
+    position: absolute;
+    top: 40%;
+    /* Center vertically */
+    left: 0;
+    transform: translateY(-50%);
+    /* Center vertically */
+    width: 100%;
+    padding: 20px;
+    /* Adjust padding as needed */
+    text-align: left;
+    box-sizing: border-box;
+    z-index: 1;
+    /* Ensure the caption is above the darkener */
+}
+
+/* Optional: Adjust vertical alignment if needed */
+div.carousel-caption h2,
+div.carousel-caption p {
+    text-shadow: 0 0 20px gray;
+}
+
+div.carousel-caption h2,
+div.carousel-caption p,
+div.carousel-caption button {
+    margin-left: 20px;
+}
+
+div.carousel-caption h2 {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+div.carousel-caption p {
+    font-size: 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 9999;
+    /* Bring the arrows to the very top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+.carousel-control-prev {
+    left: -60px;
+}
+
+.carousel-control-next {
+    right: -60px;
+}
+
+.custom-carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    /* Allow the carousel itself to be clickable */
+    z-index: 1000;
+    /* Make sure the buttons are above everything else */
+}
+
+.custom-carousel-controls button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    pointer-events: all;
+    /* Enable the buttons to be clicked */
+    z-index: 1001;
+    /* Ensure buttons are above everything else */
+    width: 50px;
+    /* Make the button size consistent */
+    height: 50px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s ease background-color;
+}
+
+.custom-carousel-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.carousel-indicators button {
+    border-radius: 5px !important;
+    height: 10px !important;
+    width: 50px !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+div.spotlight-facilities-container {
+    position: absolute;
+    bottom: -50%;
+    z-index: 5;
+    left: 10%;
+    right: 10%;
+}
+
+div.spotlight-facilities-title {
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 95px;
+}
+
+div.spotlight-facilities-title h2 {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.spotlight-container {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.spotlight {
+    position: absolute;
+    /* If you need absolute positioning */
+    width: 100%;
+    /* Adjust as needed */
+    max-width: 1200px;
+    /* Set a max width to keep it centered within the page */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the spotlight items within the spotlight container */
+}
+
+.spotlight-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Ensure the image and text are spaced correctly */
+    margin: 50px 0;
+    width: 100%;
+    /* Ensure each item takes up the full width of the spotlight */
+}
+
+.spotlight-item img {
+    width: 500px;
+    max-width: 500px;
+    min-width: 500px;
+    height: 300px;
+    object-fit: cover;
+    /* Ensure the image covers the area without distortion */
+    border-radius: 50px;
+
+    transition: 0.3s ease min-width;
+}
+
+.spotlight-item img:hover {
+    min-width: 550px;
+}
+
+.spotlight-item .description {
+    width: calc(100%);
+    /* Adjust width to fit the remaining space */
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.spotlight-item.reverse {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+
+.spotlight-item h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 20px gray;
+}
+
+.spotlight-item hr {
+    border: none;
+    height: 6px;
+    background-color: white;
+    box-shadow: 0 0 30px white;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+.spotlight-item p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+div.other-facilities-container {
+    position: absolute;
+    bottom: -283%;
+    z-index: 5;
+    left: 10%;
+    right: 10%;
+}
+
+div.other-facilities-title {
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+}
+
+div.other-facilities-title h2 {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.one-of-the-other-facilities {
+    position: relative;
+    width: 100%; /* Default width */
+    height: 500px; /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 20px; /* Ensure border-radius is visible */
+    transition: all 0.3s ease; /* Smooth transition for width change */
+}
+
+.row {
+    display: flex;
+    transition: all 0.3s ease; /* Smooth transition for width changes */
+}
+
+.col {
+    width: 100%;
+}
+
+.one-of-the-other-facilities {
+    transition: 0.2s ease width;
+}
+
+.focus-facility {
+    width: 150%;
+}
+
+.regular-facility {
+    width: 100%;
+}
+
+.unfocus-facility {
+    width: 750%;
+}
+
+.one-of-the-other-facilities img {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px) !important;
+    height: calc(100% + 8px);
+    object-fit: cover;
+}
+
+.one-of-the-other-facilities .darkener {
+    filter: brightness(60%) blur(3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px; /* Ensure border-radius is applied */
+
+    transition: 0.2s ease filter;
+}
+
+.one-of-the-other-facilities:hover .darkener {
+    filter: brightness(75%) blur(0px);
+}
+
+.one-of-the-other-facilities .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0); /* Center both horizontally and vertically */
+    text-align: center;
+    color: white;
+    z-index: 1; /* Ensure content is above the image */
+    padding: 20px;
+    width: 90%; /* Ensure content fits within the container */
+    box-sizing: border-box; /* Include padding in width calculation */
+
+    transition: 0.2s ease transform;
+}
+
+.one-of-the-other-facilities:hover .content {
+    transform: translate(-50%, -50%);
+}
+
+.one-of-the-other-facilities h1 {
+    font-size: 2.5em; /* Adjust font size as needed */
+    font-weight: bold;
+    text-shadow: 0 0 10px gray; /* Softer, more diffuse shadow */
+    margin: 0; /* Remove default margin */
+}
+
+.one-of-the-other-facilities p {
+    font-size: 1.1em; /* Adjust as needed */
+    margin: 10px 0 20px; /* Adjust margin */
+}
+
+.one-of-the-other-facilities button {
+    cursor: pointer;
+    display: inline-flex; /* Use inline-flex for proper centering */
+    align-items: center;
+    justify-content: center;
+}
+
+.one-of-the-other-facilities:hover h1,
+.one-of-the-other-facilities:hover p,
+.one-of-the-other-facilities:hover button {
+    text-shadow: 0 0 30px black;
+    transition: 0.2s ease all;
+}
+
+.one-of-the-other-facilities:hover button {
+    box-shadow: 0 0 30px black;
+    transition: 0.2s ease all;
+}
+
+.one-of-the-other-facilities button i {
+    margin-left: 10px;
+}
+
+/*   ANIMATIONS   */
+@keyframes scrollIconAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    21.43% {
+        transform: translateY(0);
+    }
+
+    42.86% {
+        transform: translateY(0);
+    }
+
+    57.14% {
+        transform: translateY(3px);
+    }
+
+    71.43% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hoverfloat {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hoverfloat:hover {
+    transform: translateY(-5px);
+}
+
+div.bottom-space {
+    height: 200px;
+    margin-top: 190%;
+}

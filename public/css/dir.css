@@ -1,0 +1,181 @@
+body { background-color: black;}
+
+h1 {
+    margin-top: 90px;
+}
+
+.card-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 50px;
+}
+
+.card {
+    width: 20rem;
+}
+
+.card-img {
+    height: 13rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+h2 {
+    font-size: 200px;
+}
+
+div.main-banner img {
+    width: 100%;
+    filter: brightness(60%);
+}
+
+div.main-banner div.banner-text {
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+div.main-banner div.banner-text h1 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0,0,0,30%);
+    font-size: 140px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+div.main-banner div.banner-text i.facilities-school-icon-shadow {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 250px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+div.main-banner div.banner-text h4 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0,0,0,30%);
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+div.main-banner div.banner-text div.banner-button-group button {
+    box-shadow: 0 0 4px white;
+    /* text-shadow: 0 0 8px #888; */
+    margin: 0 10px;
+}
+
+div.main-banner div.banner-button-group button {
+    border-radius: 50px;
+}
+
+div.facility-list-row {
+    display: flex;
+    width: 100%;
+}
+
+div.facility-list-column {
+    flex: 1;
+    margin: 5px;
+    border: 1px solid white; /* Optional: Add a border to visualize the cells */
+    padding: 10px; /* Optional: Add padding inside the cells */
+    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+}
+
+div.scroll-indicator {
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+div.scroll-indicator i.scroll-icon {
+    font-size: 20px;
+    animation: scrollIconAnimation 3s infinite;
+}
+
+div.scroll-indicator p.scroll-text {
+    font-size: 20px;
+}
+
+/* ANIMATIONS */
+
+.hoverfloat {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hoverfloat:hover {
+    transform: translateY(-5px) !important;
+}
+
+div.facility-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    text-align: center;
+}
+
+form.directions-submitter {
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+form.directions-submitter select, button {
+    display: block;
+    margin: 30px auto;
+    width: 60%;
+}
+
+form.directions-submitter select {
+  /* Basic styling */
+  padding: 10px;
+  box-sizing: border-box;
+
+  /* Border styling */
+  border: 2px solid #ccc;
+  border-radius: 15px;
+
+  /* Font styling */
+  font-size: 16px;
+
+  /* Background and text color */
+  background-color: #f9f9f9;
+  color: #333;
+
+  /* Transition for smooth effects */
+  transition: border-color 0.2s ease-in-out,
+              box-shadow 0.2s ease-in-out,
+              background-color 0.2s ease-in-out,
+              transform 0.3s ease;
+}
+
+/* Hover state */
+form.directions-submitter select:hover {
+  background-color: #f1f1f1;
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(102, 175, 233, 0.6);
+  transform: translateY(-5px) !important;
+}
+
+/* Focus state */
+form.directions-submitter select:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 20px rgba(102, 175, 233, 0.6);
+}
+
+form.directions-submitter button {
+    border-radius: 15px;
+}

@@ -1,0 +1,210 @@
+body {
+    background-color: black;
+}
+
+div.main-banner img {
+    width: 100%;
+    filter: brightness(50%) blur(4px);
+}
+
+div.main-banner div.banner-text {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+div.main-banner div.banner-text h4 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+div.from-to-display {
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    width: 30%;
+    position: absolute;
+    bottom: 60%;
+    left: 35%;
+    line-height: normal;
+}
+
+div.from-to-display div.input-group-text {
+    width: 80px;
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+div.from-to-display div.icon {
+    background: transparent;
+    border: none;
+    width: 30px;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+div.from-to-display select {
+    border-top-right-radius: 30px !important;
+    border-bottom-right-radius: 30px !important;
+    margin-bottom: 20px;
+    background-color: white;
+    transition: 0.2s ease background-color;
+}
+
+div.from-to-display select:hover {
+    background-color: #EEE;
+}
+
+form button.from-to-button {
+    border-radius: 50px;
+}
+form button.from-to-button i {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+div.start-position {
+    position: absolute;
+    bottom: 60%;
+    width: 100%;
+}
+
+.start-position {
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+}
+
+.start-position table {
+    border-collapse: collapse;
+    position: relative;
+}
+
+.start-position td {
+    padding: 20px;
+    position: relative;
+}
+
+/* Add the dashed line */
+.start-position td.not-last:first-child:first-of-type::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    /* Start from the top of the cell */
+    bottom: -10px;
+    /* End at the bottom of the cell */
+    left: 40%;
+    /* Center horizontally in the cell */
+    width: 5px;
+    background: transparent;
+    border-left: 8px dotted white;
+    z-index: -1;
+    height: calc(100%);
+    /* Adjust based on padding */
+}
+
+div.start-position table.directions {
+    color: white;
+    margin: 0 auto;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    padding: 30px;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+div.start-position table.directions td {
+    padding: 30px 0;
+    z-index: 999;
+}
+
+div.start-position table.directions td.icon-td {
+    width: 90px;
+}
+
+div.start-position table.directions div.icon {
+    font-size: 40px;
+    background-color: white;
+    color: #222;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 45px;
+    padding-top: 10px;
+}
+
+div.start-position table.directions div.icon-final {
+    color: #D22;
+}
+
+div.start-position table.directions div.instructions {
+    width: 100%;
+    margin-left: 40px;
+}
+
+div.bottomspace {
+    height: 3000px;
+}
+
+/* Make the modal wider */
+.modal-dialog {
+    max-width: 60%; /* Adjust the percentage as needed */
+}
+
+/* Dark background for the modal */
+.modal-content {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* Text color for readability */
+}
+
+/* Darker backdrop */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker backdrop color */
+}
+
+.modal h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0 0 10px gray;
+    margin-left: 5%;
+}
+
+/* Header and footer styling */
+.modal-header {
+    border-color: #454d55; /* Darker border color */
+}
+
+.modal-header .btn-close {
+    filter: invert(1); /* Optional: invert button color for better visibility */
+}
+
+/* Optional: Darker button styles */
+.modal .btn-primary {
+    background-color: #007bff; /* Adjust to fit your dark theme */
+    border-color: #007bff;
+}
+
+.modal .btn-secondary {
+    background-color: #6c757d; /* Adjust to fit your dark theme */
+    border-color: #6c757d;
+}
+
+table.directions a {
+    color: white;
+    font-weight: bold;
+    text-shadow: none;
+
+    transition: 0.3s ease text-shadow;
+}
+
+table.directions a:hover {
+    text-shadow: 0 0 10px gray;
+}

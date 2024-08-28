@@ -68,7 +68,11 @@ app.post("/directions", (req, res) => {
     fromLoc = fromLocation;
     toLoc = toLocation;
 
-    res.redirect("/directions/path")
+    if (fromLocation == toLocation) {
+        res.redirect("/directions");
+    } else {
+        res.redirect("/directions/path");
+    }
 });
 
 app.get("/directions/path", (req, res) => {

@@ -29,6 +29,12 @@ body {
     transition: 0.2s ease box-shadow;
 }
 
+@media (max-width: 1400px) {
+    span.home-page-link {
+        display: none;
+    }
+}
+
 .navbar:hover {
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }

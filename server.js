@@ -24,7 +24,7 @@ const locationData = {
     // Special Locations
     "ecotrail": new Location("EcoTrail @ RV", "ecotrail-mini.jpeg", 0, "TLeKFwI914", "A winding path that blends nature with campus life. Discover the green within."),
     "library": new Location("Renovated Library", "library-mini.jpeg", 0, "hU7i4X8Rcj", "A sanctuary of stories. Now fresher than ever."),
-    "new-basketball-court": new Location("New Basketball Court", 0, "basketball-court-mini.jpg", "XmV0S1QzLP", "Every bounce is a challenge. It's not just a court, it's a battlefield"),
+    "new-basketball-court": new Location("New Basketball Court", "basketball-court.jpg", 0, "XmV0S1QzLP", "Every bounce is a challenge. It's not just a court, it's a battlefield"),
     "good-news-cafe": new Location("Good News Café", "gnc-mini.jpg", 0, "Wc82IialIq", "The taste that lingers. It's flavor. It's comfort. It's your new obsession."),
     "school-track": new Location("School Track", "track-mini.jpg", 0, "tXA0EeT77o", "The path where endurance meets determination."),
     "the-spring": new Location("The Spring", "spring-mini.jpg", 0, "nwE79dyoOX", "The finest mental health support Singapore has to offer."),

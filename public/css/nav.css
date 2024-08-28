@@ -8,6 +8,10 @@ body {
     scrollbar-width: none !important;
 }
 
+button {
+    transition: 0.2s ease all !important;
+}
+
 .navbar {
     position: fixed;
     top: 3%;

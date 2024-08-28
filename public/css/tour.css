@@ -469,7 +469,7 @@ div.other-facilities-title h2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 0); /* Center both horizontally and vertically */
+    transform: translate(-50%, -10%); /* Center both horizontally and vertically */
     text-align: center;
     color: white;
     z-index: 1; /* Ensure content is above the image */

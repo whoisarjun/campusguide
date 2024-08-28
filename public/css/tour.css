@@ -13,11 +13,12 @@ h1 {
 }
 
 .bg-img-container img {
-    height: 100%; /* Ensures the image fills the height of the container */
     width: 100%; /* Ensures the image fills the width of the container */
     object-fit: cover; /* Crops the image to cover the container's bounds */
     display: block;
     filter: brightness(60%);
+
+    height: 99vh;
 }
 
 div.main-banner div.banner-text {

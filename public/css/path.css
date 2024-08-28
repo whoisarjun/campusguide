@@ -5,6 +5,8 @@ body {
 div.main-banner img {
     width: 100%;
     filter: brightness(50%) blur(4px);
+    height: 99vh;
+    object-fit: cover; /* Crops the image to cover the container's bounds */
 }
 
 div.main-banner div.banner-text {
@@ -19,7 +21,18 @@ div.main-banner div.banner-text h4 {
     color: white;
     text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
     font-size: 45px;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
+}
+
+div.main-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    pointer-events: none;
 }
 
 div.from-to-display {
@@ -31,6 +44,7 @@ div.from-to-display {
     bottom: 60%;
     left: 35%;
     line-height: normal;
+    margin-top: 30%;
 }
 
 div.from-to-display div.input-group-text {

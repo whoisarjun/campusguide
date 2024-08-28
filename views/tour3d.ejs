@@ -49,7 +49,23 @@
         </div>
     </div>
 
-    <iframe id="showcase-player" width="853" height="480" src="https://my.matterport.com/show/?m=tNXPdkPxawe" frameborder="0" allowfullscreen allow='xr-spatial-tracking'></iframe>
+    <table class="iframe-set">
+        <tr>
+            <td>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><button class="page-link up-arrow l4">L4</button></li>
+                        <li class="page-item"><button class="page-link l3">L3</button></li>
+                        <li class="page-item"><button class="page-link l2">L2</button></li>
+                        <li class="page-item"><button class="page-link down-arrow l1">L1</button></li>
+                    </ul>
+                </nav>
+            </td>
+            <td>
+                <iframe id="showcase-player" width="853" height="480" src="https://my.matterport.com/show/?m=tNXPdkPxawe" frameborder="0" allowfullscreen allow='xr-spatial-tracking'></iframe>
+            </td>
+        </tr>
+    </table>
 
     <div class="bottomspace">
 
@@ -59,7 +75,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
     <script src="/js/fadein.js" charset="utf-8"></script>
+    <script src="/js/pageinationsizer.js" charset="utf-8"></script>
     <script src="js/home.js"></script>
+
+    <script type="text/javascript">
+        document.querySelectorAll('.page-link').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove 'page-selected' class from all buttons
+                document.querySelectorAll('.page-link').forEach(btn => btn.classList.remove('page-selected'));
+
+                // Add 'page-selected' class to the clicked button
+                button.classList.add('page-selected');
+            });
+        });
+
+        // Constants for iframe sources
+        const src1 = 'https://my.matterport.com/show/?m=tNXPdkPxawe'; // Replace with actual URL
+        const src2 = 'https://my.matterport.com/show/?m=tNXPdkPxawe'; // Replace with actual URL
+        const src3 = 'https://my.matterport.com/show/?m=tNXPdkPxawe'; // Replace with actual URL
+        const src4 = 'https://my.matterport.com/show/?m=tNXPdkPxawe'; // Replace with actual URL
+
+        // Function to update iframe source
+        function updateIframeSource(src) {
+            document.getElementById('showcase-player').src = src;
+        }
+
+        // Event listeners for buttons
+        document.querySelector('.l1').addEventListener('click', () => updateIframeSource(src1));
+        document.querySelector('.l2').addEventListener('click', () => updateIframeSource(src2));
+        document.querySelector('.l3').addEventListener('click', () => updateIframeSource(src3));
+        document.querySelector('.l4').addEventListener('click', () => updateIframeSource(src4));
+    </script>
 </body>
 
 </html>

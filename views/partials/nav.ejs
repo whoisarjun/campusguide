@@ -1,11 +1,7 @@
 <div class="mobile-ver">
     <h1><i class="fa-solid fa-gear"></i></h1>
-    <h3 class="hoverify">
-        <span class="spinny">We're</span>
-        <span class="spinny">working</span>
-        <span class="spinny">on</span>
-        <span class="spinny">it!</span></h3>
-    <p class="hoverify">A mobile version of our website is currently in development!</p>
+    <h3 class="hoverify spinny">We're working on it!</h3>
+    <p class="hoverify spinny">A mobile version of our website is currently in development!</p>
 </div>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center">
@@ -77,11 +73,20 @@
             }
 
             @keyframes rotateGear {
-                from {
-                    transform: rotate(0deg);
+                0% {
+                    color: red;
                 }
-                to {
-                    transform: rotate(360deg);
+                25% {
+                    color: yellow;
+                }
+                50% {
+                    color: lightblue;
+                }
+                75% {
+                    color: purple;
+                }
+                100% {
+                    color: red;
                 }
             }
 

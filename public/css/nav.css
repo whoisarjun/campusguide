@@ -1,6 +1,46 @@
-/* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
     display: none !important;
+}
+
+/* Isolate .mobile-ver on screens smaller than 836px */
+@media (max-width: 836px) {
+    body > *:not(.mobile-ver) {
+        visibility: hidden; /* Hide everything */
+        height: 0; /* Collapse the height of everything */
+    }
+
+    body {
+        background-color: #555;
+    }
+
+    .mobile-ver {
+        visibility: visible; /* Ensure .mobile-ver is visible */
+        position: relative; /* Ensure .mobile-ver stays in place */
+        height: auto; /* Restore height of .mobile-ver */
+        display: block !important;
+        text-align: center;
+        padding: 20px;
+        color: white;
+    }
+
+    @keyframes rotateGear {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .mobile-ver h1 {
+        animation: rotateGear 5s linear infinite; /* Apply the rotation animation */
+    }
+}
+
+@media (min-width: 836px) {
+    .mobile-ver {
+        display: none;
+    }
 }
 
 body {

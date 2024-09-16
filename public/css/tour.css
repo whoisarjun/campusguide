@@ -57,8 +57,24 @@ div.main-banner div.banner-text h4 {
 
 div.main-banner div.banner-button-group button {
     box-shadow: 0 0 4px white;
-    margin: 0 10px;
+    margin: 10px 10px;
     border-radius: 50px;
+}
+
+@media (max-width: 1078px) {
+    div.main-banner div.banner-text h4 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    div.main-banner div.banner-text h1 {
+        font-size: 80px;
+    }
+
+    div.main-banner div.banner-button-group button {
+        width: 70%;
+    }
 }
 
 
@@ -205,6 +221,18 @@ div.carousel-caption button {
 div.carousel-caption h2 {
     font-size: 70px;
     font-weight: bold;
+}
+
+@media (max-width: 897px) {
+    div.carousel-caption h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 771px) {
+    div.carousel-caption h2 {
+        font-size: 30px;r
+    }
 }
 
 div.carousel-caption p {

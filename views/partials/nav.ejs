@@ -32,3 +32,69 @@
     </div>
 </nav>
 <div class="overlay"></div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        let isMobile = false;
+        let isTablet = false;
+
+        // Check if the device is a mobile phone
+        if (/iPhone|Android.+Mobile/.test(userAgent)) {
+            isMobile = true;
+        }
+
+        // Check if the device is a tablet
+        if (/iPad|Android(?!.*Mobile)/.test(userAgent)) {
+            isTablet = true;
+        }
+
+        if (isMobile || isTablet) {
+            // Apply styles for phones or tablets
+            const style = document.createElement('style');
+            style.innerHTML = `
+            body > *:not(.mobile-ver) {
+                visibility: hidden;
+                height: 0;
+            }
+
+            body {
+                background-color: #555;
+            }
+
+            .mobile-ver {
+                visibility: visible;
+                position: relative;
+                height: auto;
+                display: block !important;
+                text-align: center;
+                padding: 20px;
+                color: white;
+            }
+
+            @keyframes rotateGear {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .mobile-ver h1 {
+                animation: rotateGear 5s linear infinite;
+            }
+        `;
+            document.head.appendChild(style);
+        } else {
+            // Apply styles for non-mobile, non-tablet devices
+            const style = document.createElement('style');
+            style.innerHTML = `
+            .mobile-ver {
+                display: none;
+            }
+        `;
+            document.head.appendChild(style);
+        }
+    });
+</script>

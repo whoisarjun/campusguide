@@ -3,7 +3,7 @@ body::-webkit-scrollbar {
 }
 
 /* Isolate .mobile-ver on screens smaller than 836px */
-@media (max-width: 836px) {
+@media only screen and (max-width: 836px) {
     body > *:not(.mobile-ver) {
         visibility: hidden; /* Hide everything */
         height: 0; /* Collapse the height of everything */
@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (min-width: 836px) {
+@media only screen and (min-width: 836px) {
     .mobile-ver {
         display: none;
     }

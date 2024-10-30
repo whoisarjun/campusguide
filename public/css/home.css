@@ -87,6 +87,13 @@ div.main-banner div.banner-text h4 {
     margin-bottom: 30px;
 }
 
+div.main-banner div.banner-text h6 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
 div.main-banner div.banner-text div.banner-button-group button {
     box-shadow: 0 0 4px white;
     /* text-shadow: 0 0 8px #888; */

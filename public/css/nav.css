@@ -44,7 +44,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-    -ms-overflow-style: none !important
+    -ms-overflow-style: none !important;
     scrollbar-width: none !important;
 }
 
@@ -52,25 +52,34 @@ button {
     transition: 0.2s ease all !important;
 }
 
-.navbar {
+.navbar, ul.dropdown-menu {
     position: fixed;
     top: 3%;
-    left: 27%;
-    right: 27%;
     z-index: 1000;
     border-radius: 30px;
 
-    background: linear-gradient(rgba(50, 50, 50, 0.32), rgba(40, 40, 40, 0.23)) !important;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border: 2px solid rgba(0, 0, 0, 0.15);
 
     justify-content: center !important;
     align-items: center !important;
 
     transition: 0.2s ease box-shadow;
+}
+
+.navbar {
+    left: 12%;
+    right: 12%;
+    background: linear-gradient(rgba(50, 50, 50, 0.32), rgba(40, 40, 40, 0.23)) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+ul.dropdown-menu {
+    background: linear-gradient(rgba(50, 50, 50, 0.89), rgba(40, 40, 40, 0.76)) !important;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 }
 
 @media (max-width: 1400px) {

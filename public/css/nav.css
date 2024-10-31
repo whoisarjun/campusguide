@@ -19,8 +19,6 @@ button {
     position: fixed; /* Fixes navbar and dropdown menu to stay visible while scrolling */
     top: 3%; /* Positions the navbar and dropdown slightly from the top */
     z-index: 1000; /* Sets a high stack order to bring elements in front */
-    border-radius: 30px; /* Rounds the corners for a softer look */
-
     border-radius: 16px; /* Sets a smaller corner radius */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
     border: 2px solid rgba(0, 0, 0, 0.15); /* Creates a light border with transparency */
@@ -50,7 +48,7 @@ button {
     height: 100%;
     backdrop-filter: blur(20px); /* Adjust blur level as needed */
     z-index: 1;
-    border-radius: 15px;
+    border-radius: 16px;
 }
 
 /* Ensure other navbar content is above the blur layer */
@@ -64,12 +62,21 @@ ul.dropdown-menu {
     height: auto; /* Allows dropdown height to adjust based on content */
     min-height: 50px; /* Sets a minimum height */
     background: linear-gradient(rgba(50, 50, 50, 0.45), rgba(50, 50, 50, 0.54)) !important; /* Semi-transparent gradient for the background */
-    backdrop-filter: blur(8px); /* Adjust blur level as needed */
+    backdrop-filter: blur(13px); /* Adjust blur level as needed */
 }
 
 /* Styles for individual list items in the dropdown menu */
 ul.dropdown-menu li {
     width: 95%; /* Widens dropdown items to almost full menu width */
+}
+
+ul.dropdown-menu li hr.dropdown-divider {
+    width: 105.2631578947%;
+    border: none;
+    height: 2px;
+    color: rgba(0, 0, 0, 0.15);  /* old IE */
+    background-color: rgba(0, 0, 0, 0.15);  /* Modern Browsers */
+
 }
 
 /* Changes navbar shadow on hover */

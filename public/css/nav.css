@@ -2,47 +2,6 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 
-/* Isolate .mobile-ver on screens smaller than 836px */
-@media only screen and (max-width: 836px) {
-    body > *:not(.mobile-ver) {
-        visibility: hidden; /* Hide everything */
-        height: 0; /* Collapse the height of everything */
-    }
-
-    body {
-        background-color: #555;
-    }
-
-    .mobile-ver {
-        visibility: visible; /* Ensure .mobile-ver is visible */
-        position: relative; /* Ensure .mobile-ver stays in place */
-        height: auto; /* Restore height of .mobile-ver */
-        display: block !important;
-        text-align: center;
-        padding: 20px;
-        color: white;
-    }
-
-    @keyframes rotateGear {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .mobile-ver h1 {
-        animation: rotateGear 5s linear infinite; /* Apply the rotation animation */
-    }
-}
-
-@media only screen and (min-width: 836px) {
-    .mobile-ver {
-        display: none;
-    }
-}
-
 body {
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
@@ -71,21 +30,22 @@ button {
 .navbar {
     left: 12%;
     right: 12%;
+    z-index: 9;
     background: linear-gradient(rgba(50, 50, 50, 0.32), rgba(40, 40, 40, 0.23)) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
 
 ul.dropdown-menu {
-    background: linear-gradient(rgba(50, 50, 50, 0.89), rgba(40, 40, 40, 0.76)) !important;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    height: auto;
+    min-height: 50px;
+    background: linear-gradient(rgba(50, 50, 50, 0.54), rgba(40, 40, 40, 0.45)) !important;
+    position: relative;
+    z-index: 8;
 }
 
-@media (max-width: 1400px) {
-    span.home-page-link {
-        display: none;
-    }
+ul.dropdown-menu li {
+    width: 95%;
 }
 
 .navbar:hover {
@@ -113,9 +73,6 @@ ul.dropdown-menu {
 .navbar li a:hover {
     background-color: rgba(0, 0, 0, 0.1);
     transform: translateY(-3px); /* Move text up by 3px */
-
-
-
 }
 
 
@@ -128,7 +85,7 @@ ul.dropdown-menu {
 }
 
 .navbar-brand img {
-    max-height: 40px;
+    max-height: 60px;
     margin-right: 7px;
 }
 

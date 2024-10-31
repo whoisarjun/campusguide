@@ -42,13 +42,14 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 app.set('views', 'views');
 
-app.get("/", (req, res) => {
+app.get("/campus/home", (req, res) => {
     res.render("home");
 });
 
-app.get("/directions", (req, res) => {
+app.get("/dir", (req, res) => {
     res.render("dir");
 });
 

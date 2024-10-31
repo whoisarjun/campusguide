@@ -45,6 +45,12 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.set('views', 'views');
 
+app.get("/", (req, res) => {
+    res.send("<h2>So this is where the modernized main page is gonna go. Since i haven't created that, " +
+        "access the home page for the <em>campus guide</em> part of the website " +
+        "<a href='/campus/home'>here</a>:</h2>")
+});
+
 app.get("/campus/home", (req, res) => {
     res.render("home");
 });

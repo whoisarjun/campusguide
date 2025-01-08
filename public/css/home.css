@@ -31,6 +31,7 @@ h2 {
 .banner-image {
     position: relative;
     display: inline-block;
+    overflow: hidden;
 }
 
 .banner-image img {
@@ -38,16 +39,19 @@ h2 {
     width: 100vw;
     text-align: center;
     filter: brightness(60%);
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
 }
 
 @media (max-width: 1050px) {
     .banner-image img {
-        width: 150vw;
+        height: 90vw;
     }
 }
 @media (max-width: 700px) {
     .banner-image img {
-        width: 220vw;
+        height: 150vw;
     }
 }
 
@@ -61,12 +65,14 @@ div.main-banner div.banner-text {
 
 div.main-banner div.banner-text h1 {
     color: white;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 50%);
     font-size: 150px;
     font-weight: bolder;
-    margin-bottom: 30px;
     white-space: nowrap;
 }
+
+/*.show-at-700 { display: none; }*/
+/*.hide-at-700 { display: block; }*/
 
 @media (max-width: 1050px) {
     div.main-banner div.banner-text h1 {
@@ -74,8 +80,12 @@ div.main-banner div.banner-text h1 {
     }
 }
 @media (max-width: 700px) {
+    div.main-banner div.banner-text {
+        top: 230px;
+    }
     div.main-banner div.banner-text h1 {
-        font-size: 70px; /* Adjust proportionately */
+        font-size: 70px;
+        white-space: wrap;
     }
 }
 

@@ -14,7 +14,7 @@ class Location {
     constructor(name, imagelink, level, viewcode, description) {
         this.name = name;
         this.imagelink = imagelink;
-        this.level = level,
+        this.level = level;
         this.viewcode = viewcode;
         this.desc = description;
     }
@@ -22,20 +22,24 @@ class Location {
 
 const locationData = {
     // Special Locations
-    "ecotrail": new Location("EcoTrail @ RV", "ecotrail-mini.jpeg", 0, "TLeKFwI914", "A winding path that blends nature with campus life. Discover the green within."),
-    "library": new Location("Renovated Library", "library-mini.jpeg", 0, "hU7i4X8Rcj", "A sanctuary of stories. Now fresher than ever."),
-    "new-basketball-court": new Location("New Basketball Court", "basketball-court.jpg", 0, "XmV0S1QzLP", "Every bounce is a challenge. It's not just a court, it's a battlefield"),
-    "good-news-cafe": new Location("Good News Café", "gnc-mini.jpg", 0, "Wc82IialIq", "The taste that lingers. It's flavor. It's comfort. It's your new obsession."),
-    "school-track": new Location("School Track", "track-mini.jpg", 0, "tXA0EeT77o", "The path where endurance meets determination."),
-    "the-spring": new Location("The Spring", "spring-mini.jpg", 0, "nwE79dyoOX", "The finest mental health support Singapore has to offer."),
+    "ecotrail": new Location("EcoTrail @ RV", "bg_ecotrail.png", 0, "https://my.matterport.com/show/?m=poaeVuV77Ro&dh=0", "A winding path that blends nature with campus life. Discover the green within."),
+    "library": new Location("Renovated Library", "bg_library.png", 0, "https://my.matterport.com/show/?m=RCoRDd7Li9u&dh=0", "A sanctuary of stories. Now fresher than ever."),
+    "new-basketball-court": new Location("New Basketball Court", "bg_court.png", 0, "https://panoraven.com/en/embed/zbFyWcWLXo", "Every bounce is a challenge. It's not just a court, it's a battlefield"),
+    "canteen": new Location("School Canteen", "bg_canteen.png", 0, "https://panoraven.com/en/embed/i0s8Ls8ekZ", "The daily hub of flavor and chatter, served fresh."),
+    "scholars-court": new Location("Scholar's Court", "bg_scholar.png", 0, "https://panoraven.com/en/embed/YhRO2FnwMW", "Where minds meet and ideas take root. A space for quiet brilliance."),
+    "the-spring": new Location("The Spring", "bg_spring.png", 0, "https://panoraven.com/en/embed/nwE79dyoOX", "The finest mental health support Singapore has to offer."),
 
-    // Block F Location
-    "fce-room": new Location("FCE Room", "fce-room-mini.jpg", 2, "5ASV5TvQwW", "Where ingredients become masterpieces."),
-    "big-e": new Location("Big E", "big-e-mini.jpg", 1, "A7rQMrzlGA", "A hub for problem-solvers."),
-    "table-tennis-room": new Location("Table Tennis Room", "tt-room.jpg", 4, "ilsi8v3GxJ", "Where every serve is a strategy."),
-    "art-room": new Location("Art Room", "art-room-mini.jpg", 1, "HTDqWcnLoO", "Where imagination meets canvas."),
-    "slda-room": new Location("SLDA Room", "slda-room-mini.jpg", 1, "9GSOZlhFUO", "The forge where leaders are shaped."),
-    "dnt-room": new Location("D&T Workshop", "dnt-room-mini.jpg", 1, "FHNPWPBRuy", "Craft, create, and conquer the future.")
+
+    // NPC Ahh Locations
+    "good-news-cafe": new Location("Good News Café", "bg_gnc.png", 0, "https://panoraven.com/en/embed/Wc82IialIq", "The taste that lingers. It's flavor. It's comfort. It's your new obsession."),
+    "school-track": new Location("School Track", "bg_track.png", 0, "https://panoraven.com/en/embed/tXA0EeT77o", "The path where endurance meets determination."),
+    "foyer": new Location("Foyer", "bg_foyer.png", 0, "https://panoraven.com/en/embed/3u1CkASOn7", "The gateway to everything."),
+    "fce-room": new Location("FCE Room", "bg_fce.png", 2, "https://panoraven.com/en/embed/5ASV5TvQwW", "Where ingredients become masterpieces."),
+    "big-e": new Location("Big E", "bg_big_e.png", 1, "https://panoraven.com/en/embed/A7rQMrzlGA", "A hub for problem-solvers."),
+    "table-tennis-room": new Location("Table Tennis Room", "bg_tt_room.png", 4, "https://panoraven.com/en/embed/ilsi8v3GxJ", "Where every serve is a strategy."),
+    "art-room": new Location("Art Room", "bg_art.png", 1, "https://panoraven.com/en/embed/HTDqWcnLoO", "Where imagination meets canvas."),
+    "slda-room": new Location("SLDA Room", "bg_slda.png", 1, "https://panoraven.com/en/embed/9GSOZlhFUO", "The forge where leaders are shaped."),
+    "dnt-room": new Location("D&T Workshop", "bg_dnt.png", 1, "https://panoraven.com/en/embed/FHNPWPBRuy", "Craft, create, and conquer the future.")
 }
 
 app.use(express.static('public'));
@@ -46,21 +50,16 @@ app.use(express.static("public"));
 app.set('views', 'views');
 
 app.get("/", (req, res) => {
-    res.send("<h2>So this is where the modernized main page is gonna go. Since i haven't created that, " +
-        "access the home page for the <em>campus guide</em> part of the website " +
-        "<a href='/campus/home'>here</a>:</h2>")
-});
-
-app.get("/campus/home", (req, res) => {
     res.render("home");
 });
 
-app.get("/dir", (req, res) => {
+app.get("/directions", (req, res) => {
     res.render("dir");
 });
 
 app.get("/3d-tour", (req, res) => {
-    res.render("tour3d");
+    res.redirect("/")
+    // res.render("tour3d");
 });
 
 app.get("/facilities", (req, res) => {

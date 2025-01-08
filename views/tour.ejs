@@ -12,12 +12,13 @@
 
 <body>
 
-
     <%- include('partials/nav') %>
 
     <div class="main-banner">
+
         <div class="bg-img-container">
-            <img src="/images/facilities-background.jpeg" alt="">
+<!--             <img src="/images/facilities-background.jpeg" alt=""> -->
+            <img src="/images/bg_facilities.png" alt="">
         </div>
         <div class="banner-text load-fadein">
             <h1><span class="hoverfloat">Facilities</span></h1>
@@ -30,7 +31,7 @@
             </h4> <!-- 🤢 cringe -->
             <div class="banner-button-group">
                 <a href="/directions"><button class="hoverfloat btn btn-light btn-lg" type="button" name="learn-more-button">Directions</button></a>
-                <a href="/3d-tour"><button class="hoverfloat btn btn-outline-light btn-lg" type="button" name="complete-tour-button">Complete 3D Tour</button></a>
+                <a href="#spotlight"><button class="hoverfloat btn btn-outline-light btn-lg" type="button" name="complete-tour-button">Spotlights</button></a>
             </div>
         </div>
 
@@ -41,7 +42,7 @@
             </div>
         </button>
 
-        <div class="whats-new-container">
+        <div class="whats-new-container" id="whats-new">
 
 
             <div class="whats-new-title">
@@ -112,7 +113,7 @@
 
         </div>
 
-        <div class="spotlight-facilities-container">
+        <div class="spotlight-facilities-container" id="spotlight">
             <div class="spotlight-facilities-title">
                 <h2><span class="hoverfloat">Our</span>
                     <span class="hoverfloat">Spotlight</span>
@@ -123,25 +124,25 @@
             <div class="spotlight-container">
                 <div class="spotlight">
                     <div class="spotlight-item">
-                        <img src="/images/gnc-mini.jpg" alt="Spotlight Image 1">
+                        <img src="/images/canteen-mini.jpeg" alt="Spotlight Image 1">
                         <div class="description">
-                            <h1 class="hoverify">Good News Café</h1>
+                            <h1 class="hoverify">School Canteen</h1>
                             <hr>
-                            <p>The taste that lingers. It’s flavor. It’s comfort. It’s your new obsession.</p>
-                            <a href="/facilities/good-news-cafe"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
-                                    Find Out More
+                            <p>The daily hub of flavor and chatter, served fresh.</p>
+                            <a href="/facilities/canteen"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
+                                    View
                                     <i class="fa-solid fa-arrow-right"></i></button></a>
                         </div>
                     </div>
 
                     <div class="spotlight-item reverse">
-                        <img src="/images/track-mini.jpg" alt="Spotlight Image 2">
+                        <img src="/images/scholar-mini.jpeg" alt="Spotlight Image 2">
                         <div class="description">
-                            <h1 class="hoverify">School Track</h1>
+                            <h1 class="hoverify">Scholar's Court</h1>
                             <hr>
-                            <p>The path where endurance meets determination.</p>
-                            <a href="/facilities/school-track"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
-                                    Find Out More
+                            <p>Where minds meet and ideas take root. A space for quiet brilliance.</p>
+                            <a href="/facilities/scholars-court"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
+                                    View
                                     <i class="fa-solid fa-arrow-right"></i></button></a>
                         </div>
                     </div>
@@ -153,7 +154,7 @@
                             <hr>
                             <p>The finest mental health support Singapore has to offer.</p>
                             <a href="/facilities/the-spring"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
-                                    Find Out More
+                                    View
                                     <i class="fa-solid fa-arrow-right"></i></button></a>
                         </div>
                     </div>
@@ -164,7 +165,7 @@
 
         </div>
 
-        <div class="other-facilities-container">
+        <div class="other-facilities-container" id="more">
             <div class="other-facilities-title">
                 <h2><span class="hoverfloat">More</span>
                     <span class="hoverfloat">Facilities</span>
@@ -172,6 +173,48 @@
             </div>
 
             <div class="more-facilities text-center">
+                <div class="row">
+                    <div class="col cell1 regular-facility" id="cell1">
+                        <div class="one-of-the-other-facilities">
+                            <div class="darkener"><img src="/images/gnc-mini.jpg" alt="Facility Image"></div>
+                            <div class="content">
+                                <h1 class="hoverify">Good News Café</h1>
+                                <span class="badge text-bg-danger">Block A</span>
+                                <p>The taste that lingers.</p>
+                                <a href="/facilities/good-news-cafe"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
+                                        Visit
+                                        <i class="fa-solid fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col cell2 regular-facility" id="cell2">
+                        <div class="one-of-the-other-facilities">
+                            <div class="darkener"><img src="/images/track-mini.jpg" alt="Facility Image"></div>
+                            <div class="content">
+                                <h1 class="hoverify">School Track</h1>
+                                <span class="badge text-bg-success">Block J</span>
+                                <p>The path where endurance meets determination.</p>
+                                <a href="/facilities/school-track"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
+                                        Visit
+                                        <i class="fa-solid fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col cell3 regular-facility" id="cell3">
+                        <div class="one-of-the-other-facilities">
+                            <div class="darkener"><img src="/images/foyer-mini.jpeg" alt="Facility Image"></div>
+                            <div class="content">
+                                <h1 class="hoverify">Foyer</h1>
+                                <span class="badge text-bg-warning">Entrance</span>
+                                <p>The gateway to everything.</p>
+                                <a href="/facilities/foyer"><button class="hoverfloat btn btn-lg btn-outline-light" type="submit">
+                                        Visit
+                                        <i class="fa-solid fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
                 <div class="row">
                     <div class="col cell1 regular-facility" id="cell1">
                         <div class="one-of-the-other-facilities">
@@ -257,9 +300,16 @@
                 </div>
             </div>
 
+            <div>
+                <h1></h1>
+                <h2 class="text" id="campus-text"></h2>
+            </div>
         </div>
 
         <div class="bottom-space"></div>
+
+        <%- include("partials/creds") %>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
         <script src="/js/fadein.js" charset="utf-8"></script>

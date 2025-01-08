@@ -35,8 +35,7 @@ h2 {
 
 .banner-image img {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 100vw;
     filter: brightness(60%);
 }
 
@@ -57,6 +56,17 @@ div.main-banner div.banner-text h1 {
     white-space: nowrap;
 }
 
+@media (max-width: 1050px) {
+    div.main-banner div.banner-text h1 {
+        font-size: 100px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 700px) {
+    div.main-banner div.banner-text h1 {
+        font-size: 70px; /* Adjust proportionately */
+    }
+}
+
 div.main-banner div.banner-text i.facilities-school-icon-shadow {
     position: absolute;
     top: 170px;
@@ -75,11 +85,33 @@ div.main-banner div.banner-text h4 {
     margin-bottom: 30px;
 }
 
+@media (max-width: 1050px) {
+    div.main-banner div.banner-text h4 {
+        font-size: 24px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 700px) {
+    div.main-banner div.banner-text h4 {
+        font-size: 17px; /* Adjust proportionately */
+    }
+}
+
 div.main-banner div.banner-text h6 {
     color: white;
     text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
     font-size: 15px;
     margin-bottom: 30px;
+}
+
+@media (max-width: 1050px) {
+    div.main-banner div.banner-text h6 {
+        font-size: 10px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 700px) {
+    div.main-banner div.banner-text h6 {
+        font-size: 7px; /* Adjust proportionately */
+    }
 }
 
 div.main-banner div.banner-text div.banner-button-group button {
@@ -94,12 +126,23 @@ div.main-banner div.banner-button-group button {
 
 div.pages-container {
     position: absolute;
-    top: 550px;
+    top: 55vh;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     width: 95%;
     /* Adjust as needed */
+}
+
+@media (max-width: 1050px) {
+    div.pages-container {
+        top: 50vh;
+    }
+}
+@media (max-width: 700px) {
+    div.pages-container {
+        top: 45vh;
+    }
 }
 
 div.pages-row {
@@ -130,10 +173,32 @@ div.pages-column h2 {
     color: white;
 }
 
+@media (max-width: 1060px) {
+    div.pages-column h2 {
+        font-size: 40px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 800px) {
+    div.pages-column h2 {
+        font-size: 28px; /* Adjust proportionately */
+    }
+}
+
 div.pages-column p {
     color: white;
     font-size: 30px;
     margin-top: 20px;
+}
+
+@media (max-width: 1060px) {
+    div.pages-column p {
+        font-size: 20px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 800px) {
+    div.pages-column p {
+        font-size: 14px; /* Adjust proportionately */
+    }
 }
 
 div.pages-column button {
@@ -148,6 +213,14 @@ div.pages-column button {
 
 div.pages-column button i {
     margin-left: 3px;
+}
+
+div.pages-show-split { display: block !important }
+div.pages-show-stacked { display: none !important }
+
+@media (max-width: 600px) {
+    div.pages-show-split { display: none !important }
+    div.pages-show-stacked { display: block !important }
 }
 
 div.scroll-indicator {

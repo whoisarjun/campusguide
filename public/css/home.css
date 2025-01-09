@@ -48,7 +48,7 @@ div.main-banner div.banner-text h1 {
     text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
     font-size: 150px;
     font-weight: bolder;
-    white-space: nowrap;
+    white-space: wrap;
 }
 
 /*.show-at-700 { display: none; }*/
@@ -59,13 +59,14 @@ div.main-banner div.banner-text h1 {
         font-size: 100px; /* Adjust proportionately */
     }
 }
-@media (max-width: 700px) {
-    div.main-banner div.banner-text {
-        top: 230px;
-    }
+@media (max-width: 570px) {
     div.main-banner div.banner-text h1 {
         font-size: 70px;
-        white-space: wrap;
+    }
+}
+@media (max-width: 400px) {
+    div.main-banner div.banner-text h1 {
+        font-size: 55px;
     }
 }
 
@@ -74,6 +75,8 @@ div.main-banner div.banner-text h4 {
     text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
     font-size: 35px;
     margin-bottom: 30px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 @media (max-width: 1050px) {
@@ -84,6 +87,11 @@ div.main-banner div.banner-text h4 {
 @media (max-width: 700px) {
     div.main-banner div.banner-text h4 {
         font-size: 17px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 400px) {
+    div.main-banner div.banner-text h4 {
+        font-size: 13px; /* Adjust proportionately */
     }
 }
 

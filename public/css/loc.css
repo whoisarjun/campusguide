@@ -11,67 +11,94 @@ div.main-banner {
 }
 
 div.bg-img-container {
-    width: 100%;
-    height: 800px; /* Fixed height */
-    overflow: hidden; /* Crop the image if it exceeds the container */
     position: relative;
+    display: inline-block;
+    overflow: hidden;
 }
 
 div.bg-img-container img {
+    display: block;
+    width: 100vw;
+    text-align: center;
     filter: brightness(40%);
-    width: 100%;
+    object-fit: cover;
+    object-position: center;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire container while being cropped */
+}
+
+@media (max-width: 1050px) {
+    .bg-img-container img {
+        height: 90vw;
+    }
+}
+@media (max-width: 700px) {
+    .bg-img-container img {
+        height: 120vw;
+    }
+}
+
+div.page-content {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: max(40px, 3vh);
+    width: 100%;
 }
 
 div.main-banner div.banner-text {
-    position: absolute;
-    top: 170px;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
-}
-
-div.main-banner::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    pointer-events: none;
+    margin: 100px 5vw 60px;
 }
 
 div.main-banner div.banner-text h1 {
     color: white;
     text-shadow: 0 0 20px gray;
-    font-size: 60px;
+    font-size: 80px;
     font-weight: bolder;
     margin-bottom: 10px;
+}
+
+@media (max-width: 1050px) {
+    div.main-banner div.banner-text h1 {
+        font-size: 55px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 570px) {
+    div.main-banner div.banner-text h1 {
+        font-size: 39px;
+    }
+}
+@media (max-width: 400px) {
+    div.main-banner div.banner-text h1 {
+        font-size: 30px;
+    }
 }
 
 div.main-banner div.banner-text h4 {
     color: white;
     text-shadow: 0 0 20px gray;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 30px;
 }
 
-div.main-banner div.banner-text p {
-    color: white;
-    margin-top: 150px;
+@media (max-width: 1050px) {
+    div.main-banner div.banner-text h4 {
+        font-size: 17px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 570px) {
+    div.main-banner div.banner-text h4 {
+        font-size: 12px; /* Adjust proportionately */
+    }
+}
+@media (max-width: 400px) {
+    div.main-banner div.banner-text h4 {
+        font-size: 9px; /* Adjust proportionately */
+    }
 }
 
 iframe {
-    position: absolute; /* Positioning to overlap */
-    bottom: 3%; /* Adjust as needed to overlap the image */
-    left: 15%;
-    width: 70%; /* Adjust width as needed */
-    height: 65%; /* Adjust height as needed */
+    width: 70vw; /* Adjust width as needed */
+    margin-left: 15vw;
+    height: 65vh; /* Adjust height as needed */
     border: 0 none;
     border-radius: 8px;
     z-index: 2; /* Ensure iframe is above the image */
@@ -80,6 +107,24 @@ iframe {
                 0 4px 4px rgba(0,0,0,0.11),
                 0 6px 8px rgba(0,0,0,0.11),
                 0 8px 16px rgba(0,0,0,0.11);
+}
+
+@media (max-width: 760px) {
+    iframe {
+        height: 55vh;
+    }
+}
+
+@media (max-width: 500px) {
+    iframe {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 350px) {
+    iframe {
+        height: 35vh;
+    }
 }
 
 .hoverfloat {

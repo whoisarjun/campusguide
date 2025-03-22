@@ -6,19 +6,46 @@ h1 {
     margin-top: 90px;
 }
 
-.bg-img-container {
-    height: 950px;
-    width: 100%;
-    overflow: hidden; /* Ensures anything outside the container's bounds is not visible */
+/*.banner-image {*/
+/*    height: 950px;*/
+/*    width: 100%;*/
+/*    overflow: hidden; !* Ensures anything outside the container's bounds is not visible *!*/
+/*}*/
+
+/*.banner-image img {*/
+/*    width: 100%; !* Ensures the image fills the width of the container *!*/
+/*    object-fit: cover; !* Crops the image to cover the container's bounds *!*/
+/*    display: block;*/
+/*    filter: brightness(60%);*/
+
+/*    height: 99vh;*/
+/*}*/
+
+.banner-image {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
 }
 
-.bg-img-container img {
-    width: 100%; /* Ensures the image fills the width of the container */
-    object-fit: cover; /* Crops the image to cover the container's bounds */
+.banner-image img {
     display: block;
+    width: 100%;
+    text-align: center;
     filter: brightness(60%);
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+}
 
-    height: 99vh;
+@media (max-width: 1050px) {
+    .banner-image img {
+        height: 90vw;
+    }
+}
+@media (max-width: 700px) {
+    .banner-image img {
+        height: 120vw;
+    }
 }
 
 div.main-banner div.banner-text {

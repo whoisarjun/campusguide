@@ -357,12 +357,6 @@ div.stack-content p {
     text-shadow: 0 0 20px gray;
 }
 
-div.stack-content h2,
-div.stack-content p,
-div.stack-content button {
-    margin-left: 20px;
-}
-
 div.stack-content h2 {
     font-size: 30px;
     font-weight: bold;

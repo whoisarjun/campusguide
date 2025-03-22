@@ -2,25 +2,6 @@ body {
     background-color: black;
 }
 
-h1 {
-    margin-top: 90px;
-}
-
-/*.banner-image {*/
-/*    height: 950px;*/
-/*    width: 100%;*/
-/*    overflow: hidden; !* Ensures anything outside the container's bounds is not visible *!*/
-/*}*/
-
-/*.banner-image img {*/
-/*    width: 100%; !* Ensures the image fills the width of the container *!*/
-/*    object-fit: cover; !* Crops the image to cover the container's bounds *!*/
-/*    display: block;*/
-/*    filter: brightness(60%);*/
-
-/*    height: 99vh;*/
-/*}*/
-
 .banner-image {
     position: relative;
     display: inline-block;
@@ -29,12 +10,12 @@ h1 {
 
 .banner-image img {
     display: block;
-    width: 100%;
+    width: 100vw;
     text-align: center;
     filter: brightness(60%);
     object-fit: cover;
     object-position: center;
-    height: auto;
+    height: 100%;
 }
 
 @media (max-width: 1050px) {
@@ -48,20 +29,26 @@ h1 {
     }
 }
 
-div.main-banner div.banner-text {
+div.page-content {
     position: absolute;
-    top: 270px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: max(80px, 15vh);
+    width: 100%;
+}
+
+div.main-banner div.banner-text {
+    /*position: absolute;*/
+    /*top: 270px;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
     text-align: center;
 }
 
 div.main-banner div.banner-text h1 {
     color: white;
     text-shadow: 0 0 20px rgba(0, 0, 0, 30%);
-    font-size: 140px;
+    font-size: 150px;
     font-weight: bolder;
-    margin-bottom: 30px;
+    white-space: wrap;
 }
 
 div.main-banner div.banner-text h4 {
@@ -93,42 +80,29 @@ div.main-banner div.banner-button-group button {
     }
 }
 
-
-
-div.scroll-indicator {
-    color: white;
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 2;
-}
-
-div.scroll-indicator i.scroll-icon {
-    font-size: 20px;
-    animation: scrollIconAnimation 3s infinite;
-}
-
-div.scroll-indicator p.scroll-text {
-    font-size: 20px;
-}
-
 div.whats-new-container {
-    position: absolute;
-    bottom: -30%;
-    z-index: 5;
-    width: 80%;
-    left: 10%;
-    right: 10%;
+    /*position: absolute;*/
+    /*bottom: -30%;*/
+    /*z-index: 5;*/
+    /*width: 80%;*/
+    /*left: 10%;*/
+    /*right: 10%;*/
+    margin-top: 300px;
 }
 
 div.whats-new-title {
     color: white;
     margin-top: 50px;
     text-align: left;
-    margin-left: 95px;
+    margin-left: 12.5vw;
     z-index: 999;
+}
+
+@media (max-width: 768px) {
+    div.whats-new-title {
+        text-align: center;
+        margin-left: 0;
+    }
 }
 
 div.whats-new-title h2 {
@@ -145,24 +119,21 @@ div.whats-new-body {
     color: white;
     border-radius: 16px;
     overflow: hidden;
-    max-width: 85%;
-    /* Reduce the width of the carousel */
-    margin: 0 auto;
-    /* Center the carousel within the container */
-}
-
-div.whats-new-container {
-    /* fill up something here */
+    max-width: 75vw; /* Reduce width of the carousel */
+    margin: 0 auto; /* Center the carousel */
+    height: 300px; /* Fixed height */
+    display: flex;
+    align-items: center; /* Keep image centered vertically */
+    justify-content: center; /* Keep image centered horizontally */
 }
 
 div.whats-new-body img {
     width: 100%;
-    height: 300px;
-    /* Ensure the image takes the full height of the container */
-    object-fit: cover;
-    /* Crop the image to fit the specified height */
+    height: 300px; /* Ensures image height is fixed */
+    max-width: none; /* Prevents shrinking */
+    object-fit: cover; /* Ensures full coverage */
+    object-position: center center; /* Keeps image centered */
     display: block;
-    position: relative;
     filter: opacity(0%);
 }
 
@@ -176,25 +147,25 @@ div.carousel-item {
 
 div.carousel-darkener.ecotrail-carousel {
     background: url("/images/ecotrail-mini.jpeg") center center no-repeat;
-    background-position: center -200px;
-    background-size: cover;
-    /* Ensure the image covers the entire area */
+    background-size: cover; /* Maintains aspect ratio and always covers */
+    height: 300px; /* Fixed height */
+    width: 100%; /* Full width */
     filter: brightness(50%) blur(3px);
 }
 
 div.carousel-darkener.library-carousel {
     background: url("/images/library-mini.jpeg") center center no-repeat;
-    background-position: center -500px;
-    background-size: cover;
-    /* Ensure the image covers the entire area */
+    background-size: cover; /* Maintains aspect ratio and always covers */
+    height: 300px; /* Fixed height */
+    width: 100%; /* Full width */
     filter: brightness(50%) blur(3px);
 }
 
 div.carousel-darkener.court-carousel {
     background: url("/images/basketball-court-mini.jpg") center center no-repeat;
-    background-position: center -200px;
-    background-size: cover;
-    /* Ensure the image covers the entire area */
+    background-size: cover; /* Maintains aspect ratio and always covers */
+    height: 300px; /* Fixed height */
+    width: 100%; /* Full width */
     filter: brightness(50%) blur(3px);
 }
 
@@ -255,54 +226,46 @@ div.carousel-caption h2 {
     }
 }
 
+table.whats-new-table {
+    width: 100vw;
+    border-collapse: collapse;
+    border: none;
+}
+
+td.button-td {
+    width: 12.5vw;
+    text-align: center;
+}
+
+td.carousel-td {
+    width: 75vw;
+    text-align: center;
+}
+
+div.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+button.button-td {
+    width: 12.5vw;
+}
+
+div.carousel-td {
+    width: 75vw;
+}
+
 div.carousel-caption p {
     font-size: 20px;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 150px;
-    height: 150px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    z-index: 9999;
-    /* Bring the arrows to the very top */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(100%);
-}
-
-.carousel-control-prev {
-    left: -60px;
-}
-
-.carousel-control-next {
-    right: -60px;
-}
-
 .custom-carousel-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
+    /*display: flex;*/
+    pointer-events: auto;
     /* Allow the carousel itself to be clickable */
-    z-index: 1000;
-    /* Make sure the buttons are above everything else */
-}
-
-.custom-carousel-controls button {
+    z-index: 69420;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
@@ -310,18 +273,23 @@ div.carousel-caption p {
     border-radius: 50%;
     cursor: pointer;
     font-size: 24px;
-    pointer-events: all;
-    /* Enable the buttons to be clicked */
-    z-index: 1001;
-    /* Ensure buttons are above everything else */
-    width: 50px;
     /* Make the button size consistent */
     height: 50px;
-    margin-top: 40px;
+    width: 50px;
+    /*margin-top: 40px;*/
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     transition: 0.1s ease background-color;
+}
+
+#prevBtn {
+    margin-left: calc(6.25vw - 25px);
+}
+
+#nextBtn {
+    margin-right: calc(6.25vw - 25px);
 }
 
 .custom-carousel-controls button:hover {
@@ -334,6 +302,91 @@ div.carousel-caption p {
     width: 50px !important;
     margin-left: 5px !important;
     margin-right: 5px !important;
+}
+
+@media (max-width: 768px) {
+    div.carousel-container {
+        display: none;
+    }
+}
+
+div.stack-carousel {
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+div.sc-item {
+    height: 200px !important;
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
+    border-radius: 16px !important;
+    z-index: 12;
+    position: relative;
+
+}
+
+div.stack-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    margin: 25px 20px 0;
+}
+
+/* Optional: Adjust vertical alignment if needed */
+div.stack-content h2,
+div.stack-content p {
+    text-shadow: 0 0 20px gray;
+}
+
+div.stack-content h2,
+div.stack-content p,
+div.stack-content button {
+    margin-left: 20px;
+}
+
+div.stack-content h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media (max-width: 430px) {
+    div.stack-content h2 {
+        font-size: 25px;
+    }
+    div.stack-content p {
+        font-size: 15px;
+    }
+}
+
+div.sc-item div.stack-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Place the darkener behind the caption */
+    pointer-events: none;
+    /* Ensure it doesn't interfere with interactions */
+    background-size: cover; /* Maintains aspect ratio and always covers */
+    height: 200px; /* Fixed height */
+    width: 100%; /* Full width */
+    filter: brightness(50%) blur(2px);
+    border-radius: 16px;
+}
+
+div.stack-eco div.stack-img {
+    background: url("/images/ecotrail-mini.jpeg") center center / cover no-repeat;
+    object-fit: cover;
+}
+
+div.stack-lib div.stack-img {
+    background: url("/images/library-mini.jpeg") center center / cover no-repeat;
+    object-fit: cover;
+}
+
+div.stack-bbc div.stack-img {
+    background: url("/images/basketball-court-mini.jpeg") center center / cover no-repeat;
+    object-fit: cover;
 }
 
 div.spotlight-facilities-container {

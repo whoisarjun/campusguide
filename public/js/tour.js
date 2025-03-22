@@ -1,19 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var carouselElement = document.getElementById('carouselExampleCaptions');
-    var carouselInstance = new bootstrap.Carousel(carouselElement);
 
-    document.getElementById('prevBtn').addEventListener('click', function() {
-        carouselInstance.prev();
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', function() {
-        carouselInstance.next();
-    });
-});
-
-document.getElementById('scroller').addEventListener('click', function() {
-    window.scrollBy({ top: 500, behavior: 'smooth' });
-});
 
 // Function to wrap each word in a span with the class 'hoverfloat'
 function wrapWords() {

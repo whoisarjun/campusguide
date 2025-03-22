@@ -423,7 +423,7 @@ div.spotlight-facilities-container {
 
 div.spotlight-facilities-title {
     color: white;
-    margin-top: 50px;
+    margin-top: 80px;
     text-align: center;
 }
 
@@ -443,20 +443,6 @@ div.spotlight-facilities-title h2 {
     .spotlight-container {
         display: none;
     }
-}
-
-.spotlight {
-    position: absolute;
-    /* If you need absolute positioning */
-    width: 100%;
-    /* Adjust as needed */
-    max-width: 1200px;
-    /* Set a max width to keep it centered within the page */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Center the spotlight items within the spotlight container */
 }
 
 .spotlight-item {
@@ -580,16 +566,12 @@ div.spotlight-facilities-title h2 {
 }
 
 div.other-facilities-container {
-    position: absolute;
-    top: 383%;
-    z-index: 5;
-    left: 10%;
-    right: 10%;
+    margin: 0 5vw 5vw;
 }
 
 div.other-facilities-title {
     color: white;
-    margin-top: 50px;
+    margin-top: 80px;
     text-align: center;
 }
 
@@ -606,6 +588,19 @@ div.other-facilities-title h2 {
     overflow: hidden;
     border-radius: 20px; /* Ensure border-radius is visible */
     transition: all 0.3s ease; /* Smooth transition for width change */
+    margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+    .one-of-the-other-facilities {
+        height: 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    .one-of-the-other-facilities {
+        height: 200px;
+    }
 }
 
 .row {
@@ -654,13 +649,15 @@ div.other-facilities-title h2 {
     transition: 0.2s ease filter;
 }
 
-.one-of-the-other-facilities:hover .darkener {
-    filter: brightness(75%) blur(0px);
+@media (min-width: 992px) {
+    .one-of-the-other-facilities:hover .darkener {
+        filter: brightness(75%) blur(0px);
+    }
 }
 
 .one-of-the-other-facilities .content {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -10%); /* Center both horizontally and vertically */
     text-align: center;
@@ -673,9 +670,25 @@ div.other-facilities-title h2 {
     transition: 0.2s ease transform;
 }
 
-.one-of-the-other-facilities:hover .content {
-    transform: translate(-50%, -50%);
+@media (max-width: 991px) {
+    .one-of-the-other-facilities .content {
+        transform: translate(-50%, -30%)
+    }
 }
+
+@media (max-width: 767px) {
+    .one-of-the-other-facilities .content {
+        transform: translate(-50%, -40%)
+    }
+}
+
+@media (min-width: 992px) {
+    .one-of-the-other-facilities:hover .content {
+        transform: translate(-50%, -40%);
+    }
+}
+
+
 
 .one-of-the-other-facilities h1 {
     font-size: 2.5em; /* Adjust font size as needed */
@@ -689,6 +702,21 @@ div.other-facilities-title h2 {
     margin: 10px 0 20px; /* Adjust margin */
 }
 
+@media (max-width: 767px) {
+    .one-of-the-other-facilities h1 {
+        font-size: 2em;
+    }
+
+    .one-of-the-other-facilities p {
+        font-size: 0.8em;
+    }
+
+    .one-of-the-other-facilities button {
+        font-size: 1.3em;
+        height: 40px;
+    }
+}
+
 .one-of-the-other-facilities button {
     cursor: pointer;
     display: inline-flex; /* Use inline-flex for proper centering */
@@ -696,16 +724,18 @@ div.other-facilities-title h2 {
     justify-content: center;
 }
 
-.one-of-the-other-facilities:hover h1,
-.one-of-the-other-facilities:hover p,
-.one-of-the-other-facilities:hover button {
-    text-shadow: 0 0 30px black;
-    transition: 0.2s ease all;
-}
+@media (min-width: 992px) {
+    .one-of-the-other-facilities:hover h1,
+    .one-of-the-other-facilities:hover p,
+    .one-of-the-other-facilities:hover button {
+        text-shadow: 0 0 30px black;
+        transition: 0.2s ease all;
+    }
 
-.one-of-the-other-facilities:hover button {
-    box-shadow: 0 0 30px black;
-    transition: 0.2s ease all;
+    .one-of-the-other-facilities:hover button {
+        box-shadow: 0 0 30px black;
+        transition: 0.2s ease all;
+    }
 }
 
 .one-of-the-other-facilities button i {

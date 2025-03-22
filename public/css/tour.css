@@ -87,7 +87,19 @@ div.whats-new-container {
     /*width: 80%;*/
     /*left: 10%;*/
     /*right: 10%;*/
-    margin-top: 300px;
+    margin-top: 30vh;
+}
+
+@media (max-width: 486px) {
+    div.whats-new-container {
+        margin-top: 20vh;
+    }
+}
+
+@media (max-width: 369px) {
+    div.whats-new-container {
+        margin-top: 15vh;
+    }
 }
 
 div.whats-new-title {
@@ -304,16 +316,20 @@ div.carousel-caption p {
     margin-right: 5px !important;
 }
 
-@media (max-width: 768px) {
-    div.carousel-container {
-        display: none;
-    }
-}
-
 div.stack-carousel {
     justify-content: center;
     align-items: center;
     width: 100vw;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    div.carousel-container {
+        display: none;
+    }
+    div.stack-carousel {
+        display: block;
+    }
 }
 
 div.sc-item {
@@ -323,6 +339,8 @@ div.sc-item {
     border-radius: 16px !important;
     z-index: 12;
     position: relative;
+    padding-top: 25px;
+    margin-bottom: 25px;
 
 }
 
@@ -348,6 +366,7 @@ div.stack-content button {
 div.stack-content h2 {
     font-size: 30px;
     font-weight: bold;
+    margin-top: 25px;
 }
 
 @media (max-width: 430px) {
@@ -385,16 +404,27 @@ div.stack-lib div.stack-img {
 }
 
 div.stack-bbc div.stack-img {
-    background: url("/images/basketball-court-mini.jpeg") center center / cover no-repeat;
+    background: url("/images/basketball-court-mini.jpg") center center / cover no-repeat;
+    object-fit: cover;
+}
+
+div.stack-cnt div.stack-img {
+    background: url("/images/canteen-mini.jpeg") center center / cover no-repeat;
+    object-fit: cover;
+}
+
+div.stack-sch div.stack-img {
+    background: url("/images/scholar-mini.jpeg") center center / cover no-repeat;
+    object-fit: cover;
+}
+
+div.stack-spr div.stack-img {
+    background: url("/images/spring-mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 
 div.spotlight-facilities-container {
-    position: absolute;
-    bottom: -50%;
-    z-index: 5;
-    left: 10%;
-    right: 10%;
+
 }
 
 div.spotlight-facilities-title {
@@ -416,6 +446,12 @@ div.spotlight-facilities-title h2 {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .spotlight-container {
+        display: none;
+    }
+}
+
 .spotlight {
     position: absolute;
     /* If you need absolute positioning */
@@ -435,14 +471,19 @@ div.spotlight-facilities-title h2 {
     align-items: center;
     justify-content: space-between;
     /* Ensure the image and text are spaced correctly */
-    margin: 50px 0;
-    width: 100%;
+    width: 90vw;
+    margin: 50px 5vw;
     /* Ensure each item takes up the full width of the spotlight */
 }
 
+@media (max-width: 870px) {
+    .spotlight-item {
+        margin: 20px 5vw;
+        /* Ensure each item takes up the full width of the spotlight */
+    }
+}
+
 .spotlight-item img {
-    width: 500px;
-    max-width: 500px;
     min-width: 500px;
     height: 300px;
     object-fit: cover;
@@ -454,6 +495,36 @@ div.spotlight-facilities-title h2 {
 
 .spotlight-item img:hover {
     min-width: 550px;
+}
+
+@media (max-width: 1287px) {
+    .spotlight-item img {
+        min-width: 450px;
+    }
+    .spotlight-item img:hover {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 1010px) {
+    .spotlight-item img {
+        min-width: 400px;
+        height: 250px;
+        border-radius: 30px;
+    }
+    .spotlight-item img:hover {
+        min-width: 450px;
+    }
+}
+
+@media (max-width: 870px) {
+    .spotlight-item img {
+        min-width: 300px;
+        height: 200px;
+    }
+    .spotlight-item img:hover {
+        min-width: 350px;
+    }
 }
 
 .spotlight-item .description {
@@ -468,12 +539,17 @@ div.spotlight-facilities-title h2 {
     text-align: right;
 }
 
-
 .spotlight-item h1 {
     font-size: 4em;
     margin-bottom: 10px;
     font-weight: bold;
     text-shadow: 0 0 20px gray;
+}
+
+@media (max-width: 1185px) {
+    .spotlight-item h1 {
+        font-size: 3.5em;
+    }
 }
 
 .spotlight-item hr {
@@ -488,6 +564,26 @@ div.spotlight-facilities-title h2 {
 .spotlight-item p {
     font-size: 1.1em;
     line-height: 1.5;
+}
+
+@media (max-width: 1122px) {
+    .spotlight-item h1 {
+        font-size: 2.5em;
+    }
+    .spotlight-item p {
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 943px) {
+    .spotlight-item h1 {
+        font-size: 2em;
+    }
+    .spotlight-item p {
+        font-size: 0.8em;
+        line-height: 1.5;
+    }
 }
 
 div.other-facilities-container {

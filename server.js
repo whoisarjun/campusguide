@@ -40,7 +40,7 @@ const locationData = {
     "fce-room": new Location("FCE Room", "bg_fce.png", 2, "https://panoraven.com/en/embed/5ASV5TvQwW", "Where ingredients become masterpieces."),
     "big-e": new Location("Big E", "bg_big_e.png", 1, "https://panoraven.com/en/embed/A7rQMrzlGA", "A hub for problem-solvers."),
     "fitness-corner": new Location("Fitness Corner", "bg_fitness_corner.png", 1, "https://panoraven.com/en/embed/bM4Yg7riwj", "Where strength is built and limits are tested. Push past the usual."),
-    "table-tennis-room": new Location("Table Tennis Room", "bg_tt_room.png", 4, "https://panoraven.com/en/embed/ilsi8v3GxJ", "Where every serve is a strategy."),
+    "table-tennis-room": new Location("Table Tennis Room", "bg_tt_room.png", 4, "https://panoraven.com/en/embed/McMSU2wQKK", "Where every serve is a strategy."),
     "art-room": new Location("Art Room", "bg_art.png", 1, "https://panoraven.com/en/embed/HTDqWcnLoO", "Where imagination meets canvas."),
     "slda-room": new Location("SLDA Room", "bg_slda.png", 1, "https://panoraven.com/en/embed/9GSOZlhFUO", "The forge where leaders are shaped."),
     "dnt-room": new Location("D&T Workshop", "bg_dnt.png", 1, "https://panoraven.com/en/embed/FHNPWPBRuy", "Craft, create, and conquer the future.")

@@ -117,13 +117,13 @@ iframe {
 
 @media (max-width: 500px) {
     iframe {
-        height: 40vh;
+        height: 50vh;
     }
 }
 
 @media (max-width: 350px) {
     iframe {
-        height: 35vh;
+        height: 45vh;
     }
 }
 

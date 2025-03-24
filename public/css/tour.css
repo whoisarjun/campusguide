@@ -417,6 +417,11 @@ div.stack-spr div.stack-img {
     object-fit: cover;
 }
 
+div.stack-rej div.stack-img {
+    background: url("/images/rejuvenate-mini.jpg") center center / cover no-repeat;
+    object-fit: cover;
+}
+
 div.spotlight-facilities-container {
 
 }

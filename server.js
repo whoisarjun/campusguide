@@ -70,6 +70,10 @@ app.get("/facilities", (req, res) => {
     res.render("tour");
 });
 
+app.get("/about-rv", (req, res) => {
+    res.render("about");
+});
+
 app.post("/directions", (req, res) => {
     const fromLocation = req.body.fromLocation;
     const toLocation = req.body.toLocation;

@@ -1,6 +1,8 @@
+<!-- Main HTML structure for RV Campus Guide homepage -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+<!-- Head section: metadata, stylesheets, favicon -->
 <head>
     <meta charset="utf-8">
     <title>RV Campus Guide</title>
@@ -11,15 +13,19 @@
     <link rel="icon" type="image/x-icon" href="/images/rvhs-logo.png">
 </head>
 
-<body style="background-color: black">
+<body style="background-color: #000000;">
 
+    <!-- Navigation bar included from partials -->
     <%- include('partials/nav') %>
 
+    <!-- Main banner section with background image and content -->
     <div class="main-banner">
+        <!-- Background image for homepage banner -->
         <div class="banner-image">
             <img src="/images/bg_home.png" alt="">
         </div>
 
+        <!-- Page content overlayed on banner -->
         <div class="page-content">
             <div class="banner-text load-fadein">
                 <h1 class="hoverify">Campus Guide</h1>
@@ -28,6 +34,7 @@
                 </h4>
             </div>
 
+            <!-- Two-column layout for desktop view -->
             <div class="container pages-show-split">
                 <div class="row">
                     <div class="pages-column col-6 hoverfloat">
@@ -49,6 +56,7 @@
                 </div>
             </div>
 
+            <!-- Single-column stacked layout for smaller screens -->
             <div class="container pages-show-stacked">
                 <div class="row">
                     <div class="pages-column col-12 hoverfloat">
@@ -75,8 +83,10 @@
 
     </div>
 
+    <!-- Credits/footer included from partials -->
     <%- include("partials/creds") %>
 
+    <!-- JS Scripts: Bootstrap, FontAwesome, and custom fade-in -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
     <script src="/js/fadein.js"></script>

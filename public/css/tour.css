@@ -630,18 +630,6 @@ div.other-facilities-title h2 {
     transition: 0.2s ease width;
 }
 
-.focus-facility {
-    width: 150%;
-}
-
-.regular-facility {
-    width: 100%;
-}
-
-.unfocus-facility {
-    width: 750%;
-}
-
 .one-of-the-other-facilities img {
     position: absolute;
     top: -4px;
@@ -796,3 +784,125 @@ div.bottom-space {
     height: 200px;
     margin-top: 190%;
 }
+
+
+/* Wrapper for halo */
+
+.ai-halo{ position:relative; display:inline-block; border-radius:2.5rem; padding:3px; }
+
+/* MAGNIFYING GLASS */
+.input-icon       { position:relative; }
+.search-icon{
+  position:absolute; left:18px; top:50%; transform:translateY(-50%);
+  font-size:1rem; color:#fff; opacity:.8; pointer-events:none; z-index:2;
+}
+
+/* OUTER BLOOM DO NOT DELTE ALTHOUGH LOOKS LIKE DUPLICATE*/
+.ai-halo::before{
+  content:""; position:absolute; inset:-14px; border-radius:inherit; pointer-events:none;
+  background:radial-gradient(160% 120% at 20% 30%,rgba(145,110,255,.9)0%,rgba(145,110,255,.5)25%,rgba(255,63,163,.35)60%,transparent 90%);
+  filter:blur(26px) saturate(180%); opacity:.9; z-index:-2;
+}
+
+.ai-halo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+
+    --angle: 0deg;
+    background: conic-gradient(
+            from var(--angle),
+            rgba(90, 120, 255, 0.6) 0deg,
+            rgba(130, 95, 255, 0.55) 90deg,
+            rgba(190, 80, 255, 0.5) 180deg,
+            rgba(90, 120, 255, 0.6) 270deg,
+            rgba(130, 95, 255, 0.55) 360deg
+    );
+
+    padding: 2px;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+
+    filter: blur(4px);
+    opacity: 0.85;
+    z-index: 3; /* bring it on top */
+    animation: spinBorder 6s linear infinite;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spinBorder {
+    to {
+        --angle: 360deg;
+    }
+}
+.ai-input{
+
+border:none !important;          /* kills the white outline */
+box-shadow:none !important;      /* kills any BS shadow */
+}
+/* DO NOT DELETE */
+/* typing flash still works */
+.ai-halo.typing::after{
+    filter:blur(4px) saturate(220%);
+}
+/* ==========================================================
+   ✨ Subtler AI halo  – keeps old look but with softer glow
+   ========================================================== */
+
+/* Outer bloom : less blur & lower opacity */
+.ai-halo::before{
+    filter:blur(14px) saturate(140%);
+    opacity:.55;                           /* was .9 */
+  }
+  
+  /* Border rim : thinner, softer colours, smoother mix */
+.ai-halo:hover::after {
+    filter: blur(6px) saturate(180%);
+    opacity: 1;
+}
+  
+  /* Typing flash : bump only a little */
+  .ai-halo.typing::after{
+    filter:blur(2.4px) saturate(140%);
+  }
+  
+  /* Frosted fill : slightly darker so rim pops */
+  .ai-input{
+    background:rgba(0, 24, 48, .55);       /* dark plum tint */
+    backdrop-filter:blur(10px) saturate(120%);
+    color: white;
+  }
+
+.ai-halo:active::after {
+    filter: blur(7px) saturate(250%);
+    opacity: 1;
+}
+
+  .ai-input::placeholder {
+    color: rgba(255, 255, 255, 0.53) !important;
+    opacity: 1 !important;
+  }
+/* keep the input inside the rim without clipping */
+.ai-halo{ overflow:hidden; }                 /* clip anything that leaks */
+
+.ai-input{
+  box-sizing:border-box;                     /* include rim padding in 100 % */
+  width:100%;
+  border-radius:inherit;                     /* keeps perfect pill */
+}
+.ai-halo::after{
+    z-index: 2 !important;     /* move rim above the input */
+    pointer-events: none;      /* keep clicks on the field */
+  }
+
+  
+/* the subtler one u choose whether uw or not to use it since the subtler one look nicer imo */

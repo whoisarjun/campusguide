@@ -1,7 +1,8 @@
 # 🏫 RV Campus Guide
 
-CampusGuide is a Node.js + Express-powered campus navigation web app designed to help students and visitors explore River Valley High School (RVHS). It provides a clean and interactive interface to discover key facilities, learn about the school, and navigate easily. It is currently hosted at:  
+CampusGuide is a Node.js + Express-powered campus navigation web app designed to help students and visitors explore River Valley High School (RVHS). It provides a clean and interactive interface to discover key facilities, learn about the school, and navigate easily. My version is currently hosted at:  
 🔗 [https://campusguide-ajgq.onrender.com/](https://campusguide-ajgq.onrender.com/)
+The actual implementation of this website is under a different link hosted by RVHS, and has likely been updated by third parties.
 
 ---
 

@@ -581,6 +581,12 @@ div.spotlight-facilities-title h2 {
 
 div.other-facilities-container {
     margin: 0 5vw 5vw;
+    overflow-x: hidden;  /* Add this to prevent horizontal overflow */
+}
+
+.more-facilities .row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 div.other-facilities-title {
@@ -904,5 +910,162 @@ box-shadow:none !important;      /* kills any BS shadow */
     pointer-events: none;      /* keep clicks on the field */
   }
 
-  
-/* the subtler one u choose whether uw or not to use it since the subtler one look nicer imo */
+/* Enhanced magical particles floating around */
+.ai-halo::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+            radial-gradient(circle at 20% 50%, rgba(147, 112, 255, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(255, 63, 163, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 50% 20%, rgba(90, 120, 255, 0.25) 0%, transparent 50%);
+    filter: blur(20px) saturate(200%);
+    opacity: 0.8;
+    z-index: -2;
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+/* Pulsing glow animation */
+@keyframes pulseGlow {
+    0% {
+        filter: blur(20px) saturate(200%);
+        opacity: 0.6;
+    }
+    100% {
+        filter: blur(25px) saturate(250%);
+        opacity: 1;
+    }
+}
+
+/* Enhanced border with more colors */
+.ai-halo::after {
+    background: conic-gradient(
+            from var(--angle),
+            rgba(90, 120, 255, 0.8) 0deg,
+            rgba(147, 112, 255, 0.9) 60deg,
+            rgba(255, 63, 163, 0.8) 120deg,
+            rgba(255, 100, 200, 0.7) 180deg,
+            rgba(130, 95, 255, 0.8) 240deg,
+            rgba(90, 120, 255, 0.8) 300deg,
+            rgba(90, 120, 255, 0.8) 360deg
+    );
+    filter: blur(3px) saturate(180%);
+    animation: spinBorder 8s linear infinite, borderPulse 3s ease-in-out infinite alternate;
+}
+
+/* Border pulse effect */
+@keyframes borderPulse {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Enhanced typing effect with sparkles */
+.ai-halo.typing::after {
+    filter: blur(1px) saturate(300%) brightness(120%);
+    animation: spinBorder 4s linear infinite, typingSparkle 0.6s ease-in-out infinite;
+}
+
+@keyframes typingSparkle {
+    0%, 100% {
+        filter: blur(1px) saturate(300%) brightness(120%);
+    }
+    50% {
+        filter: blur(2px) saturate(350%) brightness(140%);
+    }
+}
+
+/* Magical hover effect */
+.ai-halo:hover::before {
+    animation: pulseGlow 2s ease-in-out infinite alternate, hoverFloat 1.5s ease-in-out infinite;
+}
+
+@keyframes hoverFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+}
+
+/* Input focus magic */
+.ai-input:focus {
+    background: rgba(15, 25, 60, 0.7);
+    backdrop-filter: blur(15px) saturate(150%);
+    transition: all 0.3s ease;
+}
+
+/* Icon glow effect */
+.search-icon {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.ai-halo:hover .search-icon,
+.ai-halo.typing .search-icon {
+    color: rgba(147, 112, 255, 0.9);
+    filter: drop-shadow(0 0 12px rgba(147, 112, 255, 0.6));
+}
+
+/* Magical shimmer effect on the input */
+.ai-input {
+    position: relative;
+    background: rgba(0, 24, 48, 0.6);
+    backdrop-filter: blur(12px) saturate(140%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.ai-halo:hover .ai-input::before {
+    left: 100%;
+}
+
+/* No Results Message Styling */
+.no-results-container {
+    margin: 40px 0;
+    padding: 20px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.no-results-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.no-results-heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.no-results-subtext {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .no-results-heading {
+        font-size: 2em;
+    }
+
+    .no-results-subtext {
+        font-size: 1em;
+    }
+}

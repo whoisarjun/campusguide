@@ -271,8 +271,8 @@
             <div class="other-facilities-container" id="more">
                 <div class="other-facilities-title">
                     <h2><span class="hoverfloat">More</span>
-                        <span class="hoverfloat">Facilities</span>
-                    </div>  
+                        <span class="hoverfloat">Facilities</span></h2>
+                </div>
                     <div class="facility-search my-4 d-flex justify-content-center">
                         <div class="ai-halo input-icon w-100" style="max-width:1000px;">    <!-- my goon bar -->
                           <i class="fa-solid fa-magnifying-glass search-icon"></i>          <!-- icon for goon -->
@@ -281,9 +281,19 @@
                                  placeholder="Search facilities…" aria-label="Search facilities">
                         </div>
                       </div>
+
+                <!-- Add this div right after the facility-search div -->
+                <div id="noResultsMessage" class="no-results-container text-center" style="display: none;">
+                    <h2 class="no-results-heading">
+                        <span class="hoverfloat">No</span>
+                        <span class="hoverfloat">facilities</span>
+                        <span class="hoverfloat">found</span>
+                    </h2>
+                    <p class="no-results-subtext">Try adjusting your search terms or clear your search to view all facilities.</p>
+                </div>
                       
                     
-                    </h2>
+
                 </div>
 
                 <div class="more-facilities text-center">
@@ -453,6 +463,7 @@
                 </div>
             </div>
         </div>
+    <br><br>
 
 
         <%- include("partials/creds") %>
@@ -476,35 +487,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
         <script src="/js/fadein.js" charset="utf-8"></script>
+    <script src="/js/search-bar-magic.js" charset="utf-8"></script>
         <script src="/js/cellsizechanger.js" charset="utf-8"></script>
         <script src="/js/tour.js" charset="utf-8"></script>
         <script src="js/home.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fuse.js@7"></script>  <!-- for the fuzz search -->
-        <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const cards = [...document.querySelectorAll('.regular-facility')];
-        const fuse  = new Fuse(
-            cards.map(el => ({ el, title: el.querySelector('h1').textContent.trim() })),
-            { keys:['title'], threshold:0.4, ignoreLocation:true }
-        );
-
-        const input = document.getElementById('facilitySearch');
-        const halo  = input.closest('.ai-halo');  //add the halo
-        let hue = 0, timer;
-
-        input.addEventListener('input', () => {
-            /* fuzzy filter */
-            const q = input.value.trim();
-            const show = q ? new Set(fuse.search(q).map(r => r.item.el)) : new Set(cards);
-            cards.forEach(c => { c.style.display = show.has(c) ? '' : 'none'; });
-            halo.classList.add('typing');
-            clearTimeout(timer);
-            timer = setTimeout(() => halo.classList.remove('typing'), 500);
-            });
-        });
-        </script>
-
-
 
 </body>
 

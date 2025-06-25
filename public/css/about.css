@@ -6,6 +6,12 @@ br {
     height: 5px;
 }
 
+@media (max-width: 768px) {
+    .left-right-split {
+        display: none !important;
+    }
+}
+
 .carousel-darkener {
     filter: none !important;
 }

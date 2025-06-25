@@ -305,11 +305,11 @@ div.carousel-caption p {
     transition: 0.1s ease background-color;
 }
 
-#prevBtn {
+#prevBtn, #prevBtn2 {
     margin-left: calc(6.25vw - 25px);
 }
 
-#nextBtn {
+#nextBtn, #nextBtn2 {
     margin-right: calc(6.25vw - 25px);
 }
 

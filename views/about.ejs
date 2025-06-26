@@ -12,19 +12,26 @@
     <link rel="icon" type="image/x-icon" href="/images/rvhs-logo.png">
 </head>
 <body style="background-color: black;">
+    <!-- NAVIGATION -->
     <%- include('partials/nav') %>
 
+    <!-- MAIN BANNER -->
     <div class="main-banner">
+
+        <!-- BACKGROUND IMAGE -->
         <div class="banner-image">
             <img src="/images/bg_facilities.png" alt="">
         </div>
 
         <div class="page-content">
+
+            <!-- HEADER -->
             <div class="banner-text load-fadein">
                 <h1><span class="hoverfloat">About</span> <span class="hoverfloat">RV</span></h1>
                 <h4><span class="hoverfloat">Discover</span> <span class="hoverfloat">our</span> <span class="hoverfloat">story</span></h4>
             </div>
 
+            <!-- WHY RV SECTION -->
             <div class="spotlight-facilities-container" id="why-rv">
                 <!-- Desktop version -->
                 <div class="spotlight left-right-split">
@@ -32,9 +39,14 @@
                         <div class="description">
                             <h1 class="hoverify">Why RV?</h1>
                             <hr>
-                            <p>At RV, we’re more than just students. We’re a vibrant community of thinkers, dreamers, and doers. <br><br> Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you’re supported every single step of the way.
-                                We aim high, bounce back stronger, care for each other, and lead with heart. <br><br> We're not just about grades. RV is a place where you can grow into someone you’re proud to be.
-                                <br><br> This is RV. Where you strive, serve, and shine. Your way.</p>
+                            <p>
+                                At RV, we’re more than just students. We’re a vibrant community of thinkers, dreamers, and doers. <br><br>
+                                Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you’re supported every single step of the way.
+                                We aim high, bounce back stronger, care for each other, and lead with heart. <br><br>
+                                We're not just about grades. RV is a place where you can grow into someone you’re proud to be.
+                                <br><br>
+                                This is RV. Where you strive, serve, and shine. Your way.
+                            </p>
                         </div>
                         <img src="/images/bg_facilities.png" alt="Why RV Image" />
                     </div>
@@ -47,19 +59,22 @@
                         <div class="stack-content">
                             <div class="event-badge">Why RV?</div>
                             <h2>Why RV?</h2>
-                            <p><br>At RV, we’re more than just students. We’re a vibrant community of thinkers, dreamers, and doers. Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you’re supported every single step of the way.
+                            <p>
+                                <br>At RV, we’re more than just students. We’re a vibrant community of thinkers, dreamers, and doers. Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you’re supported every single step of the way.
                                 We aim high, bounce back stronger, care for each other, and lead with heart. We're not just about grades. RV is a place where you can grow into someone you’re proud to be.
-                                This is RV. Where you strive, serve, and shine. Your way.</p>
+                                This is RV. Where you strive, serve, and shine. Your way.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-
+            <!-- EVENTS SECTION (TITLE) -->
             <div class="spotlight-facilities-title events-title">
                 <h2><span class="hoverfloat">Our</span> <span class="hoverfloat">Events</span></h2>
             </div>
 
+            <!-- EVENTS CAROUSEL (Desktop) -->
             <div class="carousel-container events-carousel-container">
                 <div class="button-td">
                     <button class="custom-carousel-controls" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
@@ -88,6 +103,7 @@
                 </div>
             </div>
 
+            <!-- EVENTS CAROUSEL (Mobile) -->
             <div class="stack-carousel events-carousel-container">
                 <div class="stack-eco sc-item">
                     <div class="stack-img"></div>
@@ -98,10 +114,12 @@
                 </div>
             </div>
 
+            <!-- CCAS SECTION (TITLE) -->
             <div class="spotlight-facilities-title ccas-title">
                 <h2><span class="hoverfloat">Our</span> <span class="hoverfloat">CCAs</span></h2>
             </div>
 
+            <!-- CCAS CAROUSEL (Desktop) -->
             <div class="carousel-container ccas-carousel-container">
                 <div class="button-td">
                     <button class="custom-carousel-controls" id="prevBtn2"><i class="fa-solid fa-chevron-left"></i></button>
@@ -130,6 +148,7 @@
                 </div>
             </div>
 
+            <!-- CCAS CAROUSEL (Mobile) -->
             <div class="stack-carousel ccas-carousel-container">
                 <div class="stack-eco sc-item">
                     <div class="stack-img"></div>
@@ -140,8 +159,10 @@
                 </div>
             </div>
 
+            <!-- JOIN US SECTION (TITLE) -->
             <h1 class="join-us-title">Join Us!</h1>
 
+            <!-- SOCIALS ICONS -->
             <div class="container my-5">
                 <div class="row justify-content-center text-center gx-4">
                     <div class="col-auto">
@@ -167,15 +188,19 @@
                 </div>
             </div>
 
+            <!-- ADDITIONAL SPACING -->
             <div style="height: 80px; !important"></div>
         </div>
     </div>
 
+    <!-- FOOTER / CREDITS -->
     <%- include("partials/creds") %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
     <script>
+        // Functionality for carousel buttons
+
         document.addEventListener('DOMContentLoaded', function () {
             var carouselElement = document.getElementById('carouselExample');
             var carouselInstance = new bootstrap.Carousel(carouselElement);

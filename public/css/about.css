@@ -1,47 +1,52 @@
+/* Global text color for the website */
 body {
     color: white !important;
 }
 
-br {
-    height: 5px;
-}
-
+/* Hide split layout on small screens for responsiveness */
 @media (max-width: 768px) {
     .left-right-split {
         display: none !important;
     }
 }
 
+/* Disable any darkening filter on the carousel */
 .carousel-darkener {
     filter: none !important;
 }
 
+/* Style spotlight item images */
 .spotlight-item img {
-    height: 420px !important;  /* adjust as needed */
+    height: 420px !important;
     object-fit: cover;
 }
 
+/* Remove filters from stack images */
 .stack-img {
     filter: none !important;
 }
 
+/* Set height for the stack carousel inside #why-rv section */
 #why-rv .stack-carousel {
     height: 500px !important;
 }
 
+/* Set height for stack images inside #why-rv section */
 #why-rv .stack-img {
     height: 500px !important;
 }
 
+/* Add text shadow for better readability inside stack images */
 #why-rv .stack-img p {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 1) !important;
 }
 
-
+/* Hide h2 text inside stack-content */
 .stack-content h2 {
     color: rgba(0, 0, 0, 0)
 }
 
+/* Style for general event badge */
 .event-badge {
     position: absolute;
     top: 20px;
@@ -57,10 +62,12 @@ br {
     z-index: 5;
 }
 
+/* Ensure stack-content is positioned relatively for absolute child positioning */
 .stack-content {
     position: relative;
 }
 
+/* Adjusted style for event badge inside stack-content */
 .stack-content .event-badge {
     position: absolute;
     top: 5px;
@@ -76,6 +83,7 @@ br {
     z-index: 5;
 }
 
+/* Style the "Join Us" section title */
 h1.join-us-title {
     color: white;
     text-align: center;
@@ -86,6 +94,7 @@ h1.join-us-title {
     white-space: wrap;
 }
 
+/* Base style for individual social media icons */
 .social-icon i {
     padding: 10px;
     border-radius: 50%;
@@ -93,17 +102,17 @@ h1.join-us-title {
     display: inline-block;
 }
 
-/* Base social icon styles */
+/* Enable transition effects for social icons */
 .social-icon {
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
-/* YouTube - solid red */
+/* YouTube icon color */
 .social-icon.youtube i {
     color: #FF0000;
 }
-/* Instagram - official gradient */
+/* Instagram icon gradient style */
 .social-icon.instagram i {
     background: radial-gradient(circle at 30% 107%,
     #fdf497 0%, #fdf497 5%,
@@ -112,20 +121,20 @@ h1.join-us-title {
     #285AEB 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #fff; /* fallback */
+    color: #d6249f;
 }
 
-/* Facebook - solid blue */
+/* Facebook icon color */
 .social-icon.facebook i {
     color: #1877F2;
 }
 
+/* Website icon color */
 .social-icon.website i {
     color: rgb(128, 198, 203);
 }
 
+/* Hover effect for social icons */
 .social-icon:hover {
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.1) rotate(15deg);
 }
-
-

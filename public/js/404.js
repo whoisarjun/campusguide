@@ -13,14 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const fragment = document.createElement('div');
             fragment.className = 'shatter-fragment';
 
-            // Random size between 4-12px
-            const size = Math.random() * 8 + 4;
+            // Adjust fragment properties based on screen size
+            const isMobile = window.innerWidth <= 700;
+            const maxFallDistance = isMobile ? 150 : 300; // Shorter fall on mobile
+            const maxHorizontalDrift = isMobile ? 50 : 100; // Less drift on mobile
+
+            // Random size between 4-12px (smaller on mobile)
+            const maxSize = isMobile ? 6 : 12;
+            const size = Math.random() * (maxSize - 4) + 4;
             fragment.style.width = size + 'px';
             fragment.style.height = (size * (0.5 + Math.random() * 1)) + 'px';
 
             // Random position within the number
-            fragment.style.top = (Math.random() * 80 + 10) + '%';
-            fragment.style.left = (Math.random() * 80 + 10) + '%';
+            fragment.style.top = (Math.random() * 60 + 20) + '%'; // More contained positioning
+            fragment.style.left = (Math.random() * 60 + 20) + '%';
 
             // Random colors with red theme
             const colors = [
@@ -31,9 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             fragment.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-            // Create unique animation
-            const fallDistance = Math.random() * 200 + 300; // 300-500px fall distance
-            const horizontalDrift = (Math.random() - 0.5) * 200; // -100 to 100px drift
+            // Create unique animation with mobile-friendly parameters
+            const fallDistance = Math.random() * maxFallDistance + (maxFallDistance * 0.5);
+            const horizontalDrift = (Math.random() - 0.5) * maxHorizontalDrift;
             const rotation = Math.random() * 720 - 360; // -360 to 360 degrees
             const duration = Math.random() * 0.8 + 1.2; // 1.2-2s duration
             const scale = Math.random() * 0.6 + 0.2; // 0.2-0.8 final scale
@@ -98,8 +104,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add the effect classes
         this.classList.add('shatter', 'flash');
 
-        // Screen shake effect
-        document.body.style.animation = 'screenShake 0.6s ease-out';
+        // Screen shake effect - but only on desktop
+        if (window.innerWidth > 700) {
+            document.body.style.animation = 'screenShake 0.6s ease-out';
+        }
 
         // Remove flash after short time
         setTimeout(() => {

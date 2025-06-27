@@ -324,6 +324,7 @@ body {
 @media (max-width: 700px) {
     .error-number {
         font-size: 100px;
+        overflow: hidden; /* Prevent fragments from causing horizontal scroll */
     }
     .error-title {
         font-size: 28px;
@@ -333,16 +334,24 @@ body {
     }
     .error-content {
         padding: 30px 20px;
+        overflow: hidden; /* Contain the effect within bounds */
     }
     .home-button {
         font-size: 18px;
         padding: 12px 25px;
+    }
+
+    /* Reduce shatter fragment fall distance on mobile */
+    .shatter-fragment {
+        max-width: 6px !important;
+        max-height: 8px !important;
     }
 }
 
 @media (max-width: 400px) {
     .error-number {
         font-size: 80px;
+        overflow: hidden;
     }
     .error-title {
         font-size: 24px;
@@ -352,6 +361,10 @@ body {
     }
     .page-content {
         width: 95%;
+    }
+    .error-content {
+        overflow: hidden;
+        margin: 10px 0;
     }
 }
 

@@ -1,0 +1,374 @@
+body {
+    background-color: #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.banner-image {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.banner-image img {
+    display: block;
+    width: 100vw;
+    text-align: center;
+    filter: brightness(40%);
+    object-fit: cover;
+    object-position: center;
+    height: 100vh;
+}
+
+.page-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.error-content {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 60px 40px;
+    margin: 20px 0;
+}
+
+.error-number {
+    color: white;
+    font-size: 180px;
+    font-weight: 900;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    line-height: 1;
+    animation: glowPulse 3s ease-in-out infinite;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
+.error-number:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Flash effect when clicked */
+.error-number.flash {
+    color: #ff4444;
+    text-shadow: 0 0 60px rgba(255, 68, 68, 1), 0 0 80px rgba(255, 68, 68, 0.8), 0 0 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Shatter container */
+.error-number::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+}
+
+/* Individual shatter fragments */
+.error-number.shatter::before {
+    opacity: 1;
+    animation: none;
+}
+
+/* Create multiple shatter fragments using CSS */
+.shatter-fragment {
+    position: absolute;
+    background: linear-gradient(45deg, #ff4444, #ff6666, #ffaaaa);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 2px;
+    box-shadow:
+            0 0 10px rgba(255, 68, 68, 0.6),
+            inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Generate fragments dynamically with different sizes and positions */
+.error-number.shatter .shatter-fragment:nth-child(1) {
+    width: 8px; height: 12px; top: 10%; left: 15%;
+    animation: shatterFall1 1.2s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(2) {
+    width: 6px; height: 8px; top: 20%; left: 25%;
+    animation: shatterFall2 1.4s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(3) {
+    width: 10px; height: 6px; top: 15%; left: 35%;
+    animation: shatterFall3 1.1s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(4) {
+    width: 7px; height: 9px; top: 30%; left: 45%;
+    animation: shatterFall4 1.3s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(5) {
+    width: 9px; height: 11px; top: 25%; left: 55%;
+    animation: shatterFall5 1.5s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(6) {
+    width: 5px; height: 7px; top: 40%; left: 65%;
+    animation: shatterFall6 1.2s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(7) {
+    width: 8px; height: 10px; top: 35%; left: 75%;
+    animation: shatterFall7 1.4s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(8) {
+    width: 6px; height: 8px; top: 50%; left: 85%;
+    animation: shatterFall8 1.1s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(9) {
+    width: 7px; height: 12px; top: 45%; left: 20%;
+    animation: shatterFall9 1.3s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(10) {
+    width: 9px; height: 6px; top: 60%; left: 30%;
+    animation: shatterFall10 1.2s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(11) {
+    width: 8px; height: 9px; top: 55%; left: 40%;
+    animation: shatterFall11 1.4s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(12) {
+    width: 6px; height: 11px; top: 65%; left: 50%;
+    animation: shatterFall12 1.1s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(13) {
+    width: 10px; height: 7px; top: 70%; left: 60%;
+    animation: shatterFall13 1.5s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(14) {
+    width: 5px; height: 8px; top: 75%; left: 70%;
+    animation: shatterFall14 1.3s ease-out forwards;
+}
+.error-number.shatter .shatter-fragment:nth-child(15) {
+    width: 7px; height: 10px; top: 80%; left: 80%;
+    animation: shatterFall15 1.2s ease-out forwards;
+}
+
+/* Shatter fall animations with realistic physics */
+@keyframes shatterFall1 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-50px, 400px) rotate(180deg) scale(0.5); }
+}
+@keyframes shatterFall2 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(30px, 450px) rotate(-120deg) scale(0.3); }
+}
+@keyframes shatterFall3 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-80px, 380px) rotate(240deg) scale(0.4); }
+}
+@keyframes shatterFall4 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(60px, 420px) rotate(-90deg) scale(0.6); }
+}
+@keyframes shatterFall5 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-20px, 480px) rotate(150deg) scale(0.2); }
+}
+@keyframes shatterFall6 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(90px, 350px) rotate(-200deg) scale(0.5); }
+}
+@keyframes shatterFall7 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-100px, 460px) rotate(300deg) scale(0.3); }
+}
+@keyframes shatterFall8 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(40px, 390px) rotate(-45deg) scale(0.4); }
+}
+@keyframes shatterFall9 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-70px, 430px) rotate(120deg) scale(0.6); }
+}
+@keyframes shatterFall10 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(80px, 470px) rotate(-270deg) scale(0.2); }
+}
+@keyframes shatterFall11 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-30px, 360px) rotate(210deg) scale(0.5); }
+}
+@keyframes shatterFall12 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(70px, 440px) rotate(-150deg) scale(0.3); }
+}
+@keyframes shatterFall13 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-90px, 400px) rotate(330deg) scale(0.4); }
+}
+@keyframes shatterFall14 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(50px, 410px) rotate(-60deg) scale(0.6); }
+}
+@keyframes shatterFall15 {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(-60px, 490px) rotate(180deg) scale(0.2); }
+}
+
+/* Main number shake effect */
+.error-number.shatter {
+    animation: mainShake 0.8s ease-out;
+}
+
+@keyframes mainShake {
+    0% { transform: translateX(0) rotate(0deg) scale(1); }
+    10% { transform: translateX(-8px) rotate(-3deg) scale(0.95); }
+    20% { transform: translateX(8px) rotate(3deg) scale(0.9); }
+    30% { transform: translateX(-6px) rotate(-2deg) scale(0.85); }
+    40% { transform: translateX(6px) rotate(2deg) scale(0.8); }
+    50% { transform: translateX(-4px) rotate(-1deg) scale(0.75); }
+    60% { transform: translateX(4px) rotate(1deg) scale(0.8); }
+    70% { transform: translateX(-2px) rotate(-0.5deg) scale(0.85); }
+    80% { transform: translateX(2px) rotate(0.5deg) scale(0.9); }
+    90% { transform: translateX(-1px) rotate(-0.2deg) scale(0.95); }
+    100% { transform: translateX(0) rotate(0deg) scale(1); }
+}
+
+.error-title {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    margin: 20px 0;
+}
+
+.error-subtitle {
+    color: white;
+    font-size: 24px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    margin: 20px 0 40px;
+    opacity: 0.9;
+}
+
+.home-button {
+    font-size: 20px;
+    padding: 15px 35px;
+    border-radius: 50px;
+    margin: 10px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.home-button:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5);
+}
+
+.home-button i {
+    margin-right: 8px;
+}
+
+/* Floating animation for the error content */
+.error-content {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1050px) {
+    .error-number {
+        font-size: 140px;
+    }
+    .error-title {
+        font-size: 36px;
+    }
+    .error-subtitle {
+        font-size: 20px;
+    }
+    .error-content {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .error-number {
+        font-size: 100px;
+    }
+    .error-title {
+        font-size: 28px;
+    }
+    .error-subtitle {
+        font-size: 16px;
+    }
+    .error-content {
+        padding: 30px 20px;
+    }
+    .home-button {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .error-number {
+        font-size: 80px;
+    }
+    .error-title {
+        font-size: 24px;
+    }
+    .error-subtitle {
+        font-size: 14px;
+    }
+    .page-content {
+        width: 95%;
+    }
+}
+
+/* Background pattern overlay */
+.banner-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.page-content {
+    z-index: 2;
+}

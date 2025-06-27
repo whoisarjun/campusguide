@@ -1,15 +1,19 @@
+// Import required modules
 import express from "express";
 import path from "path"; // Import path module for joining paths
 import bodyParser from "body-parser";
 
+// Set up __dirname for ES modules
 const __dirname = path.dirname(new URL(
     import.meta.url).pathname);
 
+// Create an instance of Express
 const app = express();
 
 var fromLoc = "";
 var toLoc = "";
 
+// Define the Location class to hold data for each facility
 class Location {
     constructor(name, imagelink, level, viewcode, description) {
         this.name = name;
@@ -20,6 +24,7 @@ class Location {
     }
 }
 
+// Map of all locations and their corresponding details
 const locationData = {
     // Special Locations
     "ecotrail": new Location("EcoTrail @ RV", "bg_ecotrail.png", 0, "https://my.matterport.com/show/?m=poaeVuV77Ro&dh=0", "A winding path that blends nature with campus life. Discover the green within."),
@@ -46,67 +51,42 @@ const locationData = {
     "dnt-room": new Location("D&T Workshop", "bg_dnt.png", 1, "https://panoraven.com/en/embed/FHNPWPBRuy", "Craft, create, and conquer the future.")
 }
 
+// Middleware to serve static files and parse incoming request bodies
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Set view engine and views directory
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.set('views', 'views');
 
+// Route to render the homepage
 app.get("/", (req, res) => {
     res.render("home");
 });
 
+// Route to render the directions page
 app.get("/directions", (req, res) => {
     res.render("dir");
 });
 
+// Route to redirect 3D tour to homepage
 app.get("/3d-tour", (req, res) => {
     res.redirect("/")
     // res.render("tour3d");
 });
 
+// Route to render the facilities tour page
 app.get("/facilities", (req, res) => {
     res.render("tour");
 });
 
+// Route to render about RV page
 app.get("/about-rv", (req, res) => {
     res.render("about");
 });
 
-app.post("/directions", (req, res) => {
-    const fromLocation = req.body.fromLocation;
-    const toLocation = req.body.toLocation;
-
-    // Handle the submitted data
-    fromLoc = fromLocation;
-    toLoc = toLocation;
-
-    if (fromLocation == toLocation) {
-        res.redirect("/directions");
-    } else {
-        res.redirect("/directions/path");
-    }
-});
-
-app.get("/directions/path", (req, res) => {
-    res.render("directionresults", {
-        "from": fromLoc,
-        "to": toLoc,
-        "fromLoc": locationData[fromLoc],
-        "toLoc": locationData[toLoc]
-    });
-});
-
-app.post('/directions/path', (req, res) => {
-
-    res.redirect("/facilities");
-    const { from, to } = req.body;
-
-    fromLoc = from;
-    toLoc = to;
-});
-
+// Render a specific facility based on its name
 app.get("/facilities/*", (req, res) => {
     const facName = req.params[0];
     res.render("facility", {
@@ -114,16 +94,20 @@ app.get("/facilities/*", (req, res) => {
     });
 });
 
+// Redirect POST request to specific facility route
 app.post("/facilities", (req, res) => {
     const location = req.body.location;
     res.redirect(`/facilities/${location}`)
 });
 
+// Route for fallback/blank page
 app.get("/blank", (req, res) => {
     res.render("404");
 });
 
+// Start the server
 const PORT = 6969;
 app.listen(PORT, () => {
+    // Log when the server starts
     console.log(`Server started on port ${PORT}`);
 });

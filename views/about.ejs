@@ -198,33 +198,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
-    <script>
-        // Functionality for carousel buttons
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var carouselElement = document.getElementById('carouselExample');
-            var carouselInstance = new bootstrap.Carousel(carouselElement);
-
-            document.getElementById('prevBtn').addEventListener('click', function () {
-                carouselInstance.prev();
-            });
-
-            document.getElementById('nextBtn').addEventListener('click', function () {
-                carouselInstance.next();
-            });
-
-            var carouselElement2 = document.getElementById('carouselExample2');
-            var carouselInstance2 = new bootstrap.Carousel(carouselElement2);
-
-            document.getElementById('prevBtn2').addEventListener('click', function () {
-                carouselInstance2.prev();
-            });
-
-            document.getElementById('nextBtn2').addEventListener('click', function () {
-                carouselInstance2.next();
-            });
-        });
-    </script>
+    <script src="/js/button-controller.js"></script>
     <script src="/js/fadein.js" charset="utf-8"></script>
     <script src="/js/tour.js" charset="utf-8"></script>
 </body>

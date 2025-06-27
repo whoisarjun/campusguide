@@ -110,15 +110,18 @@ h1.join-us-title {
 
 /* YouTube icon color */
 .social-icon.youtube i {
-    color: #FF0000;
+    color: #ff0000;
 }
 /* Instagram icon gradient style */
 .social-icon.instagram i {
-    background: radial-gradient(circle at 30% 107%,
-    #fdf497 0%, #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285AEB 90%);
+    background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285AEB 90%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #d6249f;

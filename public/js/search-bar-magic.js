@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.classList.remove('search-hidden');
         });
 
-        // Hide no results message
+        // Hide no result message
         if (noResultsMessage) {
             noResultsMessage.style.display = 'none';
             noResultsMessage.classList.remove('show');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.classList.add('search-hidden');
             });
 
-            // Show no results message with animation
+            // Show no result message with animation
             if (noResultsMessage) {
                 noResultsMessage.style.display = 'block';
                 setTimeout(() => {

@@ -101,7 +101,7 @@ app.post("/facilities", (req, res) => {
 });
 
 // Route for fallback/blank page
-app.get("/blank", (req, res) => {
+app.get("/*", (req, res) => {
     res.render("404");
 });
 

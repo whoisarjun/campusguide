@@ -167,7 +167,7 @@ div.carousel-item {
 }
 
 div.carousel-darkener.ecotrail-carousel {
-    background: url("/images/ecotrail-mini.jpeg") center center no-repeat;
+    background: url("/images/ecotrail_mini.jpg") center center no-repeat;
     background-size: cover; /* Maintains aspect ratio and always covers */
     height: 300px; /* Fixed height */
     width: 100%; /* Full width */
@@ -175,7 +175,7 @@ div.carousel-darkener.ecotrail-carousel {
 }
 
 div.carousel-darkener.library-carousel {
-    background: url("/images/library-mini.jpeg") center center no-repeat;
+    background: url("/images/library_mini.jpg") center center no-repeat;
     background-size: cover; /* Maintains aspect ratio and always covers */
     height: 300px; /* Fixed height */
     width: 100%; /* Full width */
@@ -183,7 +183,7 @@ div.carousel-darkener.library-carousel {
 }
 
 div.carousel-darkener.court-carousel {
-    background: url("/images/basketball-court-mini.jpg") center center no-repeat;
+    background: url("/images/bbc_mini.jpg") center center no-repeat;
     background-size: cover; /* Maintains aspect ratio and always covers */
     height: 300px; /* Fixed height */
     width: 100%; /* Full width */
@@ -397,37 +397,37 @@ div.sc-item div.stack-img {
 }
 
 div.stack-eco div.stack-img {
-    background: url("/images/ecotrail-mini.jpeg") center center / cover no-repeat;
+    background: url("/images/ecotrail_mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 
 div.stack-lib div.stack-img {
-    background: url("/images/library-mini.jpeg") center center / cover no-repeat;
+    background: url("/images/library_mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 
 div.stack-bbc div.stack-img {
-    background: url("/images/basketball-court-mini.jpg") center center / cover no-repeat;
+    background: url("/images/bbc_mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 
 div.stack-cnt div.stack-img {
-    background: url("/images/canteen-mini.jpeg") center center / cover no-repeat;
+    background: url("/images/canteen_mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 
 div.stack-sch div.stack-img {
-    background: url("/images/scholar-mini.jpeg") center center / cover no-repeat;
+    background: url("/images/scholar_mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 
 div.stack-spr div.stack-img {
-    background: url("/images/spring-mini.jpg") center center / cover no-repeat;
+    background: url("/images/spring_mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 
 div.stack-rej div.stack-img {
-    background: url("/images/rejuvenate-mini.jpg") center center / cover no-repeat;
+    background: url("/images/reju_mini.jpg") center center / cover no-repeat;
     object-fit: cover;
 }
 

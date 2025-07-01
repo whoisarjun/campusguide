@@ -15,11 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var carouselElement2 = document.getElementById('carouselExample2');
     var carouselInstance2 = new bootstrap.Carousel(carouselElement2);
 
-    document.getElementById('prevBtn2').addEventListener('click', function () {
-        carouselInstance2.prev();
-    });
+    var prevBtn2 = document.getElementById('prevBtn2');
+    if (prevBtn2) {
+        prevBtn2.addEventListener('click', function () {
+            carouselInstance2.prev();
+        });
+    }
 
-    document.getElementById('nextBtn2').addEventListener('click', function () {
-        carouselInstance2.next();
-    });
+    var nextBtn2 = document.getElementById('nextBtn2');
+    if (nextBtn2) {
+        nextBtn2.addEventListener('click', function () {
+            carouselInstance2.next();
+        });
+    }
 });

@@ -81,36 +81,17 @@
                 </div>
                 <div id="carouselExample" class="whats-new-body carousel slide carousel-td">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="/images/ecotrail-mini.jpeg" class="d-block w-100" alt="...">
-                            <div class="carousel-darkener ecotrail-carousel"></div>
-                            <div class="event-badge">EcoTrail @ RV</div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/library-mini.jpeg" class="d-block w-100" alt="...">
-                            <div class="carousel-darkener library-carousel"></div>
-                            <div class="event-badge">Library</div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/basketball-court-mini.jpg" class="d-block w-100" alt="...">
-                            <div class="carousel-darkener court-carousel"></div>
-                            <div class="event-badge">Basketball Court</div>
-                        </div>
+                        <% events.forEach((event, index) => { %>
+                            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                                <img src="<%= event.img_path %>" class="d-block w-100" alt="...">
+                                <div class="carousel-darkener" style="background: url(<%= event.img %>) center center no-repeat; background-size: cover; /* Maintains aspect ratio and always covers */ height: 300px; /* Fixed height */ width: 100%; /* Full width */ filter: brightness(50%) blur(3px);"></div>
+                                <div class="event-badge"><span class="hoverfloat"><%= event.type %></span></div>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
                 <div class="button-td">
                     <button class="custom-carousel-controls" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <!-- EVENTS CAROUSEL (Mobile) -->
-            <div class="stack-carousel events-carousel-container">
-                <div class="stack-eco sc-item">
-                    <div class="stack-img"></div>
-                    <div class="stack-content">
-                        <div class="event-badge">Why RV?</div>
-                        <h2>EcoTrail @ RV</h2>
-                    </div>
                 </div>
             </div>
 
@@ -129,33 +110,12 @@
                         <div class="carousel-item active">
                             <img src="/images/ecotrail-mini.jpeg" class="d-block w-100" alt="...">
                             <div class="carousel-darkener ecotrail-carousel"></div>
-                            <div class="event-badge">EcoTrail @ RV</div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/library-mini.jpeg" class="d-block w-100" alt="...">
-                            <div class="carousel-darkener library-carousel"></div>
-                            <div class="event-badge">Library</div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/basketball-court-mini.jpg" class="d-block w-100" alt="...">
-                            <div class="carousel-darkener court-carousel"></div>
-                            <div class="event-badge">Basketball Court</div>
+                            <div class="event-badge"><span class="hoverfloat">EcoTrail @ RV</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="button-td">
                     <button class="custom-carousel-controls" id="nextBtn2"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <!-- CCAS CAROUSEL (Mobile) -->
-            <div class="stack-carousel ccas-carousel-container">
-                <div class="stack-eco sc-item">
-                    <div class="stack-img"></div>
-                    <div class="stack-content">
-                        <div class="event-badge">Why RV?</div>
-                        <h2>EcoTrail @ RV</h2>
-                    </div>
                 </div>
             </div>
 
@@ -195,6 +155,7 @@
 
     <!-- FOOTER / CREDITS -->
     <%- include("partials/creds") %>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>

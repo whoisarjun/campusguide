@@ -2,10 +2,13 @@
 import express from "express";
 import path from "path"; // Import path module for joining paths
 import bodyParser from "body-parser";
+import fs from "fs";
 
 // Set up __dirname for ES modules
-const __dirname = path.dirname(new URL(
-    import.meta.url).pathname);
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Create an instance of Express
 const app = express();
@@ -68,6 +71,39 @@ const locationData = {
     "mla-room": new Location("mla", "Mathematics Leaders Academy Room", "https://panoraven.com/en/embed/LqnDAwDqnB", "Shaping thinkers. Crafting problem solvers.", "?")
 };
 
+function getEventImagesData() {
+    const imageDir = path.join(__dirname, "public", "images");
+    const files = fs.readdirSync(imageDir);
+
+    const result = [];
+
+    files.forEach(file => {
+        const match = file.match(/^events_(.+)_(\d+)\.(jpg|jpeg|png)$/);
+        if (match) {
+            const rawType = match[1]; // e.g., "open_house" or "RV69"
+            const imgPath = `/images/${file}`;
+
+            // Properly format title
+            const formattedType = rawType
+                .split('_')
+                .map(word => {
+                    if (word.toUpperCase() === word || /^\d+$/.test(word)) return word;
+                    if (/^[a-zA-Z]+\d+$/.test(word)) return word.toUpperCase();
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                })
+                .join(' ');
+
+            result.push({
+                type: formattedType,
+                img: imgPath
+            });
+        }
+    });
+
+    result.sort((a, b) => a.type.localeCompare(b.type));
+
+    return result;
+}
 
 // Middleware to serve static files and parse incoming request bodies
 app.use(express.static('public'));
@@ -83,17 +119,6 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
-// Route to render the directions page
-app.get("/directions", (req, res) => {
-    res.render("dir");
-});
-
-// Route to redirect 3D tour to homepage
-app.get("/3d-tour", (req, res) => {
-    res.redirect("/")
-    // res.render("tour3d");
-});
-
 // Route to render the facilities tour page
 app.get("/facilities", (req, res) => {
     res.render("tour", {
@@ -103,7 +128,10 @@ app.get("/facilities", (req, res) => {
 
 // Route to render about RV page
 app.get("/about-rv", (req, res) => {
-    res.render("about");
+    res.render("about", {
+        "events": getEventImagesData(),
+        "facilityData": locationData
+    });
 });
 
 // Render a specific facility based on its name

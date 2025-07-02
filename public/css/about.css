@@ -72,6 +72,31 @@ body {
     z-index: 5;
 }
 
+.cca-badge {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 1px 10px;
+    border-radius: 13px;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px black;
+    z-index: 5;
+    cursor: pointer;
+
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.cca-badge a {
+    text-shadow: none;
+}
+
 /* Mobile responsive event badge */
 @media (max-width: 768px) {
     .event-badge {
@@ -156,7 +181,7 @@ h1.join-us-title {
 }
 
 /* Instagram icon gradient style */
-.social-icon.instagram i {
+.social-icon.instagram i, .cca-badge i {
     background: radial-gradient(
             circle at 30% 107%,
             #fdf497 0%,

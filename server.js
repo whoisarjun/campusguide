@@ -74,6 +74,21 @@ const locationData = {
     "mla-room": new Location("mla", "Mathematics Leaders Academy Room", "https://panoraven.com/en/embed/LqnDAwDqnB", "Shaping thinkers. Crafting problem solvers.", "?")
 };
 
+const cca_socials = {
+    "art_club": "rvhs_art",
+    "chinese_calligraphy": "rvclcalligraphy",
+    "chinese_orchestra": "_rvco_",
+    "choir": "rivervalleysings",
+    "concert_band": "cueandjerk",
+    "dance_society": "rvdancesociety",
+    "eagle_scouts": "rveaglescouts",
+    "guitar_ensemble": "rv.guitar",
+    "mathematics_leaders_academy": "rvhs.mla",
+    "national_cadet_corps": "rvncc",
+    "saint_john_brigade": "rvsjb_",
+    "science_leaders_academy": "rvhs_sla"
+}
+
 function getImagesDataByPrefix(prefix) {
     const imageDir = path.join(__dirname, "public", "images");
     const files = fs.readdirSync(imageDir);
@@ -134,7 +149,8 @@ app.get("/facilities", (req, res) => {
 app.get("/about-rv", (req, res) => {
     res.render("about", {
         "events": getImagesDataByPrefix("events"),
-        "ccas": getImagesDataByPrefix("ccas")
+        "ccas": getImagesDataByPrefix("ccas"),
+        "cca_socials": cca_socials
     });
 });
 

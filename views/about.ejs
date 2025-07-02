@@ -40,10 +40,10 @@
                             <h1 class="hoverify">Why RV?</h1>
                             <hr>
                             <p>
-                                At RV, we’re more than just students. We’re a vibrant community of thinkers, dreamers, and doers. <br><br>
-                                Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you’re supported every single step of the way.
+                                At RV, we're more than just students. We're a vibrant community of thinkers, dreamers, and doers. <br><br>
+                                Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you're supported every single step of the way.
                                 We aim high, bounce back stronger, care for each other, and lead with heart. <br><br>
-                                We're not just about grades. RV is a place where you can grow into someone you’re proud to be.
+                                We're not just about grades. RV is a place where you can grow into someone you're proud to be.
                                 <br><br>
                                 This is RV. Where you strive, serve, and shine. Your way.
                             </p>
@@ -60,8 +60,8 @@
                             <div class="event-badge">Why RV?</div>
                             <h2>Why RV?</h2>
                             <p>
-                                <br>At RV, we’re more than just students. We’re a vibrant community of thinkers, dreamers, and doers. Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you’re supported every single step of the way.
-                                We aim high, bounce back stronger, care for each other, and lead with heart. We're not just about grades. RV is a place where you can grow into someone you’re proud to be.
+                                <br>At RV, we're more than just students. We're a vibrant community of thinkers, dreamers, and doers. Whether you're crushing your goals, trying something new, or just figuring things out, this is a place where you're supported every single step of the way.
+                                We aim high, bounce back stronger, care for each other, and lead with heart. We're not just about grades. RV is a place where you can grow into someone you're proud to be.
                                 This is RV. Where you strive, serve, and shine. Your way.
                             </p>
                         </div>
@@ -108,10 +108,17 @@
                 <div id="carouselExample2" class="whats-new-body carousel slide carousel-td">
                     <div class="carousel-inner">
                         <% ccas.forEach((cca, index) => { %>
-                            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                            <div class="carousel-item <%= index === 0 ? 'active' : '' %>" style="position: relative;">
                                 <img src="<%= cca.img_path %>" class="d-block w-100" alt="...">
                                 <div class="carousel-darkener" style="background: url(<%= cca.img %>) center center no-repeat; background-size: cover; /* Maintains aspect ratio and always covers */ height: 300px; /* Fixed height */ width: 100%; /* Full width */ filter: brightness(50%) blur(3px);"></div>
                                 <div class="event-badge"><span class="hoverfloat"><%= cca.type %></span></div>
+                                <div class="cca-badge"><span class="hoverfloat">
+                                    <a href="https://www.instagram.com/<%= cca_socials[cca] %>" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a></span></div>
+
+                                <!-- Instagram Button -->
+
                             </div>
                         <% }) %>
                     </div>

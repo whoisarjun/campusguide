@@ -6,6 +6,7 @@
     <title>RV Campus Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/tour.css">
+    <link rel="stylesheet" href="css/particles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="icon" type="image/x-icon" href="/images/rvhs-logo.png">
@@ -273,6 +274,7 @@
                     <h2><span class="hoverfloat">More</span>
                         <span class="hoverfloat">Facilities</span></h2>
                 </div>
+                    <!-- thanks vincent for collaborating on the search bar -->
                     <div class="facility-search my-4 d-flex justify-content-center">
                         <div class="ai-halo input-icon w-100" style="max-width:1000px;">    <!-- my goon bar -->
                           <i class="fa-solid fa-magnifying-glass search-icon"></i>          <!-- icon for goon -->
@@ -316,11 +318,6 @@
                         <% } %>
                     </div>
                 </div>
-
-                <div>
-                    <h1></h1>
-                    <h2 class="text" id="campus-text"></h2>
-                </div>
             </div>
         </div>
     <br><br>
@@ -328,18 +325,18 @@
 
         <%- include("partials/creds") %>
 
-    <script src="/js/button-controller.js"></script>
-            
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
-        <script src="/js/fadein.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4b57d90043.js" crossorigin="anonymous"></script>
+    <script src="/js/fadein.js" charset="utf-8"></script>
+    <script src="/js/random-rotate.js" charset="utf-8"></script>
     <script src="/js/button-controller.js" charset="utf-8"></script>
     <script src="/js/search-bar-magic.js" charset="utf-8"></script>
-        <script src="/js/cellsizechanger.js" charset="utf-8"></script>
-        <script src="/js/tour.js" charset="utf-8"></script>
-        <script src="js/home.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js@7"></script>  <!-- for the fuzz search -->
+    <script src="/js/cellsizechanger.js" charset="utf-8"></script>
+    <script src="/js/tour.js" charset="utf-8"></script>
+    <script src="/js/particles.js"></script>
+    <script src="/js/particles-integration.js"></script>
+    <script src="js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7"></script>  <!-- for the fuzz search -->
 
 </body>
 

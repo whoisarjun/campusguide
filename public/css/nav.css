@@ -148,3 +148,11 @@ button {
     visibility: visible; /* Sets overlay visibility */
 }
 
+button {
+    transition: 0.3s ease transform !important;
+}
+
+button:hover:not(.one-of-the-other-facilities button:hover) {
+    transform: rotate(-3deg) !important;
+}
+

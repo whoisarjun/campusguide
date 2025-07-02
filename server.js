@@ -17,7 +17,10 @@ var fromLoc = "";
 var toLoc = "";
 
 const badgeIDs = {
-    "?": "danger"
+    "?": "danger",
+    "A": "warning",
+    "B": "info",
+    "C": "success"
 }
 
 // Define the Location class to hold data for each facility
@@ -71,19 +74,20 @@ const locationData = {
     "mla-room": new Location("mla", "Mathematics Leaders Academy Room", "https://panoraven.com/en/embed/LqnDAwDqnB", "Shaping thinkers. Crafting problem solvers.", "?")
 };
 
-function getEventImagesData() {
+function getImagesDataByPrefix(prefix) {
     const imageDir = path.join(__dirname, "public", "images");
     const files = fs.readdirSync(imageDir);
 
     const result = [];
 
+    const regex = new RegExp(`^${prefix}_(.+)_(\\d+)\\.(jpg|jpeg|png)$`, 'i');
+
     files.forEach(file => {
-        const match = file.match(/^events_(.+)_(\d+)\.(jpg|jpeg|png)$/);
+        const match = file.match(regex);
         if (match) {
             const rawType = match[1]; // e.g., "open_house" or "RV69"
             const imgPath = `/images/${file}`;
 
-            // Properly format title
             const formattedType = rawType
                 .split('_')
                 .map(word => {
@@ -129,8 +133,8 @@ app.get("/facilities", (req, res) => {
 // Route to render about RV page
 app.get("/about-rv", (req, res) => {
     res.render("about", {
-        "events": getEventImagesData(),
-        "facilityData": locationData
+        "events": getImagesDataByPrefix("events"),
+        "ccas": getImagesDataByPrefix("ccas")
     });
 });
 

@@ -483,7 +483,7 @@ div.spotlight-facilities-title h2 {
     /* Ensure the image covers the area without distortion */
     border-radius: 50px;
 
-    transition: 0.3s ease min-width;
+    transition: 0.3s ease min-width, 0.4s ease transform;
 }
 
 .spotlight-item img:hover {
@@ -530,6 +530,13 @@ div.spotlight-facilities-title h2 {
 .spotlight-item.reverse {
     flex-direction: row-reverse;
     text-align: right;
+}
+
+.spotlight-item img:hover {
+    transform: rotate(2deg);
+}
+.spotlight-item.reverse img:hover {
+    transform: rotate(-2deg);
 }
 
 .spotlight-item h1 {
@@ -633,7 +640,14 @@ div.other-facilities-title h2 {
 }
 
 .one-of-the-other-facilities {
-    transition: 0.2s ease width;
+    transition: 0.2s ease width, 0.4s ease transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.one-of-the-other-facilities:hover {
+    transition: 0.4s ease transform;
 }
 
 .one-of-the-other-facilities img {
@@ -730,6 +744,13 @@ div.other-facilities-title h2 {
     display: inline-flex; /* Use inline-flex for proper centering */
     align-items: center;
     justify-content: center;
+    background: rgba(0, 0, 0, 0.15); /* translucent white */
+    backdrop-filter: blur(8px);             /* the actual blur */
+    -webkit-backdrop-filter: blur(8px);     /* safari support */
+    border-radius: 8px;                      /* rounded corners for vibes */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+    color: white;                           /* text color */
+    transition: background 0.3s ease;
 }
 
 @media (min-width: 992px) {

@@ -148,11 +148,11 @@ button {
     visibility: visible; /* Sets overlay visibility */
 }
 
-button {
+button, .do-some-weird-thing-on-hover {
     transition: 0.3s ease transform !important;
 }
 
-button:hover:not(.one-of-the-other-facilities button:hover) {
+button:hover:not(.one-of-the-other-facilities button:hover), .do-some-weird-thing-on-hover:hover {
     transform: rotate(-3deg) !important;
 }
 

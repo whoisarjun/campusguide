@@ -278,6 +278,10 @@ div.carousel-td {
     width: 75vw;
 }
 
+.carousel-indicators {
+    border-radius: 30px !important;
+}
+
 div.carousel-caption p {
     font-size: 20px;
 }

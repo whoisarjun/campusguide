@@ -218,7 +218,7 @@ div.scroll-indicator p.scroll-text {
 }
 
 .hoverfloat:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px) rotate(3deg);
 }
 
 div.pages-container {

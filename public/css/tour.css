@@ -808,7 +808,7 @@ div.other-facilities-title h2 {
 }
 
 .hoverfloat:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px) rotate(3deg);
 }
 
 div.bottom-space {
@@ -1008,7 +1008,7 @@ box-shadow:none !important;      /* kills any BS shadow */
 
 @keyframes hoverFloat {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-2px); }
+    50% { transform: translateY(-3px); }
 }
 
 /* Input focus magic */

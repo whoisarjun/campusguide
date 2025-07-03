@@ -1,4 +1,4 @@
-// Enhanced random-rotate.js with particle effects
+// Enhanced random-rotate.js with particle effects - FIXED VERSION
 let direction = 1;
 
 // Particle system for button hover effects
@@ -136,16 +136,22 @@ class ButtonParticleSystem {
 // Initialize particle system
 const particleSystem = new ButtonParticleSystem();
 
-// Enhanced facility card interactions
+// FIXED: Enhanced facility card interactions
 document.querySelectorAll('.one-of-the-other-facilities').forEach(el => {
     const button = el.querySelector('button');
+    const darkener = el.querySelector('.darkener'); // Get the inner content
     let particleInterval = null;
 
     el.addEventListener('mouseenter', () => {
-        // Existing rotation effect
+        // Apply rotation to the inner darkener div instead of the container
         const deg = 2 * direction;
         direction *= -1;
-        el.style.transform = `rotate(${deg}deg)`;
+
+        // Transform the inner content, not the container
+        if (darkener) {
+            darkener.style.transform = `rotate(${deg}deg) scale(1.02)`;
+            darkener.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
 
         // Start particle effect on button if it exists
         if (button) {
@@ -164,8 +170,10 @@ document.querySelectorAll('.one-of-the-other-facilities').forEach(el => {
     });
 
     el.addEventListener('mouseleave', () => {
-        // Reset rotation
-        el.style.transform = 'rotate(0deg)';
+        // Reset rotation on inner content
+        if (darkener) {
+            darkener.style.transform = 'rotate(0deg) scale(1)';
+        }
 
         // Stop particle effects
         if (particleInterval) {

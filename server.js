@@ -82,6 +82,7 @@ const cca_socials = {
     "concert_band": "cueandjerk",
     "dance_society": "rvdancesociety",
     "eagle_scouts": "rveaglescouts",
+    "girl_guides": "rivervalleygirlguides/",
     "guitar_ensemble": "rv.guitar",
     "mathematics_leaders_academy": "rvhs.mla",
     "national_cadet_corps": "rvncc",

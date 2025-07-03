@@ -86,7 +86,7 @@ const cca_socials = {
     "guitar_ensemble": "rv.guitar",
     "mathematics_leaders_academy": "rvhs.mla",
     "national_cadet_corps": "rvncc",
-    "saint_john_brigade": "rvsjb_",
+    "st_john_brigade": "rvsjb_",
     "science_leaders_academy": "rvhs_sla"
 }
 

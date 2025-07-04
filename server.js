@@ -76,6 +76,7 @@ const locationData = {
 
 const cca_socials = {
     "art_club": "rvhs_art",
+    "basketball": "rivervalley_basketball",
     "chinese_calligraphy": "rvclcalligraphy",
     "chinese_orchestra": "_rvco_",
     "choir": "rivervalleysings",
@@ -87,7 +88,8 @@ const cca_socials = {
     "mathematics_leaders_academy": "rvhs.mla",
     "national_cadet_corps": "rvncc",
     "st_john_brigade": "rvsjb_",
-    "science_leaders_academy": "rvhs_sla"
+    "science_leaders_academy": "rvhs_sla",
+    "table_tennis": "rvtabletennis"
 }
 
 function getImagesDataByPrefix(prefix) {

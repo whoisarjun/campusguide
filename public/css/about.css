@@ -146,6 +146,8 @@ h1.join-us-title {
     white-space: wrap;
 }
 
+
+
 /* Mobile responsive join us title */
 @media (max-width: 768px) {
     h1.join-us-title {
@@ -356,4 +358,78 @@ div.carousel-darkener {
     div.spotlight-facilities-title h2 {
         font-size: 28px;
     }
+}
+
+/* Fix for mobile Why RV section alignment */
+
+/* Ensure stack items are perfectly centered */
+div.sc-item {
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
+    /* Add this to ensure perfect centering */
+    width: 90vw !important;
+    box-sizing: border-box;
+}
+
+/* Center the stack content properly */
+div.stack-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    margin: 25px auto 0; /* Changed from margin: 25px 20px 0; */
+    padding: 0 20px; /* Move horizontal spacing to padding */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure the "Why RV?" stack item is centered */
+div.stack-why {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Alternative approach - use flexbox for perfect centering */
+div.stack-carousel {
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    display: none;
+    padding: 0; /* Remove any default padding */
+}
+
+/* For the spotlight items on smaller screens */
+@media (max-width: 480px) {
+    .spotlight-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        margin: 20px auto !important; /* Changed from margin: 20px 2vw !important; */
+        width: 96vw; /* Ensure consistent width */
+        box-sizing: border-box;
+    }
+
+    .spotlight-item .description {
+        width: 100% !important;
+        padding: 0 15px; /* Symmetric padding */
+        box-sizing: border-box;
+    }
+}
+
+/* Additional fix for the description text alignment */
+@media (max-width: 768px) {
+    .spotlight-item .description {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center; /* Add this to center text on mobile */
+    }
+}
+
+/* Ensure the stack image background is properly centered */
+div.stack-content {
+    /* Add better text centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
